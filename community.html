@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholar Community — SoXa Sanskrit Platform</title>
+  <meta name="description" content="Explore scholar profiles, ambassador highlights, and community updates on the SoXa Sanskrit Platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" data-trn="home">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger" role="menuitem"
+             aria-haspopup="true" aria-expanded="false" data-trn="repositories">
+            Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem" data-trn="title_thesis">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem" data-trn="title_epigraphical">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem" data-trn="title_literary">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" role="menuitem" data-trn="developments">Developments</a></li>
+        <li role="none"><a href="community.html" class="active" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off"
+                 data-trn-placeholder="search_placeholder">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">
+            🔍
+          </button>
+        </div>
+
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown">
+          </ul>
+        </div>
+
+        <button id="script-toggle-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle script: Devanāgarī / IAST / Roman" title="Toggle script">
+          <span class="icon">अ</span>
+          <span class="script-label">देव</span>
+        </button>
+
+        <button id="reading-mode-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-12);">
+    
+    <header style="margin-bottom: var(--space-8);">
+      <h1 class="carousel-title" style="color: var(--color-primary); font-size: var(--text-3xl); margin-bottom: var(--space-2);">Scholar Community Hub</h1>
+      <p style="font-family: var(--font-ui); color: var(--color-text-secondary); max-width: 600px;">
+        Meet the scholars, editors, and digital ambassadors driving open access Sanskrit research forward.
+      </p>
+    </header>
+
+    <!-- Scholar Spotlight Rotation Carousel -->
+    <section class="spotlight-carousel" aria-label="Featured Scholars Spotlight">
+      <div class="spotlight-slides">
+        
+        <!-- Slide 1 -->
+        <div class="spotlight-slide">
+          <div class="spotlight-img-container">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Dr. Meera Krishnamurthy" class="spotlight-img">
+          </div>
+          <div class="spotlight-info">
+            <span class="spotlight-tag">Platform Ambassador</span>
+            <h2 class="spotlight-name">Dr. Meera Krishnamurthy</h2>
+            <p class="spotlight-quote">"Open access scholarship ensures that ancient knowledge systems are not locked behind institutional paywalls but remain accessible to global seekers."</p>
+            <span class="spotlight-role">Assistant Professor, Banaras Hindu University</span>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="spotlight-slide">
+          <div class="spotlight-img-container">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Prof. Rajesh Mishra" class="spotlight-img">
+          </div>
+          <div class="spotlight-info">
+            <span class="spotlight-tag">Epigraphy Lead</span>
+            <h2 class="spotlight-name">Prof. Rajesh Mishra</h2>
+            <p class="spotlight-quote">"Preserving epigraphical records digitally is critical. Once physical stone plates weather away, these digital diplomatic transcriptions are all we have."</p>
+            <span class="spotlight-role">Senior Epigraphy Scholar, Sampurnanand University</span>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="spotlight-slide">
+          <div class="spotlight-img-container">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&q=80" alt="Dr. Anand Rao" class="spotlight-img">
+          </div>
+          <div class="spotlight-info">
+            <span class="spotlight-tag">Digital Scholar</span>
+            <h2 class="spotlight-name">Dr. Anand Rao</h2>
+            <p class="spotlight-quote">"By applying modern computational logic to Pāṇinian grammar rule interactions, we connect ancient Indian linguistics with next-generation algorithms."</p>
+            <span class="spotlight-role">Computational Linguist, IIIT Hyderabad</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="spotlight-nav">
+        <button class="spotlight-btn" id="spotlight-prev" aria-label="Previous slide">‹</button>
+        <button class="spotlight-btn" id="spotlight-next" aria-label="Next slide">›</button>
+      </div>
+    </section>
+
+    <div style="display: grid; grid-template-columns: 1fr 320px; gap: var(--space-8);">
+      
+      <!-- Scholar Directory -->
+      <section aria-label="Scholar Directory">
+        <h2 class="section-title" style="margin-bottom: var(--space-4);">Scholar Directory</h2>
+        
+        <!-- Filter chips -->
+        <div class="filter-chips" style="display:flex; gap:var(--space-2); margin-bottom:var(--space-6); flex-wrap:wrap;">
+          <button class="filter-chip active" data-field="all">All Fields</button>
+          <button class="filter-chip" data-field="literature">Literature & Aesthetics</button>
+          <button class="filter-chip" data-field="linguistics">Linguistics & Grammar</button>
+          <button class="filter-chip" data-field="epigraphy">Epigraphy & Paleography</button>
+          <button class="filter-chip" data-field="philosophy">Philosophy & Darśana</button>
+        </div>
+
+        <div class="scholar-directory-grid">
+          
+          <div class="scholar-card" data-field="literature">
+            <div class="scholar-card-avatar">MK</div>
+            <div class="scholar-card-info">
+              <span class="scholar-card-name">Dr. Meera Krishnamurthy</span>
+              <span class="scholar-card-title">Asst. Professor of Sanskrit</span>
+              <span class="scholar-card-inst">Banaras Hindu University</span>
+            </div>
+          </div>
+
+          <div class="scholar-card" data-field="epigraphy">
+            <div class="scholar-card-avatar">RM</div>
+            <div class="scholar-card-info">
+              <span class="scholar-card-name">Prof. Rajesh Mishra</span>
+              <span class="scholar-card-title">Head of Epigraphical Studies</span>
+              <span class="scholar-card-inst">Sampurnanand University</span>
+            </div>
+          </div>
+
+          <div class="scholar-card" data-field="linguistics">
+            <div class="scholar-card-avatar">AR</div>
+            <div class="scholar-card-info">
+              <span class="scholar-card-name">Dr. Anand Rao</span>
+              <span class="scholar-card-title">Research Fellow (Computational)</span>
+              <span class="scholar-card-inst">IIIT Hyderabad</span>
+            </div>
+          </div>
+
+          <div class="scholar-card" data-field="philosophy">
+            <div class="scholar-card-avatar">SS</div>
+            <div class="scholar-card-info">
+              <span class="scholar-card-name">Prof. Shruti Sharma</span>
+              <span class="scholar-card-title">Professor of Nyāya Philosophy</span>
+              <span class="scholar-card-inst">University of Delhi</span>
+            </div>
+          </div>
+
+          <div class="scholar-card" data-field="epigraphy">
+            <div class="scholar-card-avatar">HP</div>
+            <div class="scholar-card-info">
+              <span class="scholar-card-name">Dr. Hitesh Patel</span>
+              <span class="scholar-card-title">Assistant Archeologist</span>
+              <span class="scholar-card-inst">ASI Vadodara</span>
+            </div>
+          </div>
+
+          <div class="scholar-card" data-field="literature">
+            <div class="scholar-card-avatar">DS</div>
+            <div class="scholar-card-info">
+              <span class="scholar-card-name">Dr. Devendra Shastri</span>
+              <span class="scholar-card-title">Manuscriptologist</span>
+              <span class="scholar-card-inst">L.D. Institute of Indology</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Active Community Feed -->
+      <aside aria-label="Community Feed">
+        <h2 class="section-title" style="margin-bottom: var(--space-4);">Active Updates</h2>
+        <div class="review-queue-card" style="padding:var(--space-4);">
+          <div class="community-feed">
+            <div class="feed-item">
+              <div class="feed-date">June 4, 2026</div>
+              <div class="feed-text">Dr. Meera Krishnamurthy published a new Rasasūtra commentarial comparative thesis.</div>
+            </div>
+            <div class="feed-item">
+              <div class="feed-date">May 28, 2026</div>
+              <div class="feed-text">The Epigraphical Archive reached 5,000 digitized and georeferenced records.</div>
+            </div>
+            <div class="feed-item">
+              <div class="feed-date">May 15, 2026</div>
+              <div class="feed-text">Academic Partnership established with the Bhandarkar Oriental Research Institute (BORI).</div>
+            </div>
+            <div class="feed-item">
+              <div class="feed-date">April 30, 2026</div>
+              <div class="feed-text">Ambassador outreach index increased by 15% across Indian Central Universities.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo" aria-label="SoXa home">
+              <span class="logo-name">SoXa</span>
+              <span class="logo-subtitle">Sanskrit Platform</span>
+            </a>
+            <p class="footer-brand-desc">
+              An open-access Sanskrit scholarly hub combining the Thesis Repository, Epigraphical Archive, and Literary History database under one unified platform.
+            </p>
+          </div>
+          <div>
+            <h3 class="footer-col-title">Repositories</h3>
+            <ul class="footer-links">
+              <li><a href="thesis.html">Thesis Repository</a></li>
+              <li><a href="epigraphical.html">Epigraphical Archive</a></li>
+              <li><a href="literary-history.html">Literary History</a></li>
+              <li><a href="repositories.html">All Repositories</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-col-title">Platform</h3>
+            <ul class="footer-links">
+              <li><a href="developments.html">Developments</a></li>
+              <li><a href="cfp.html">CFP Tracker</a></li>
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-col-title">Contact</h3>
+            <p class="footer-contact-item">
+              <a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a>
+            </p>
+            <p class="footer-contact-item">
+              Sanskrit Higher Education Platform<br>
+              SoXa Cultural Institute
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. All content licensed under CC BY 4.0 unless otherwise noted.</p>
+        <ul class="footer-legal">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== MOBILE BOTTOM NAV ===== -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul class="bottom-nav-items">
+      <li><a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏛️</span>Home</a></li>
+      <li><a href="repositories.html" class="bottom-nav-item"><span class="nav-icon">📚</span>Repos</a></li>
+      <li><a href="developments.html" class="bottom-nav-item"><span class="nav-icon">📰</span>Devs</a></li>
+      <li><a href="about.html" class="bottom-nav-item"><span class="nav-icon">ℹ️</span>About</a></li>
+      <li><a href="contact.html" class="bottom-nav-item"><span class="nav-icon">✉️</span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kāvya Aesthetics in Late Classical Sanskrit Poetry — SoXa</title>
+  <meta name="description" content="Full record view: Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory. Ph.D. thesis, Banaras Hindu University, 2024.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" data-trn="home">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger active" role="menuitem"
+             aria-haspopup="true" aria-expanded="false" data-trn="repositories">
+            Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem" data-trn="title_thesis">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem" data-trn="title_epigraphical">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem" data-trn="title_literary">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" role="menuitem" data-trn="developments">Developments</a></li>
+        <li role="none"><a href="community.html" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <!-- Search -->
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off"
+                 data-trn-placeholder="search_placeholder">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">
+            🔍
+          </button>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+
+        <!-- User Accounts Menu -->
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown">
+            <!-- Dynamic items rendered by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Script toggle -->
+        <button id="script-toggle-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle script: Devanāgarī / IAST / Roman" title="Toggle script">
+          <span class="icon">अ</span>
+          <span class="script-label">देव</span>
+        </button>
+
+        <!-- Reading mode -->
+        <button id="reading-mode-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="reading-page-layout">
+
+      <!-- ── ARTICLE BODY ─────────────────────────────────────── -->
+      <article>
+
+        <!-- Article Header -->
+        <header class="article-header">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="article-breadcrumb-sep">›</span>
+            <a href="repositories.html">Repositories</a>
+            <span class="article-breadcrumb-sep">›</span>
+            <a href="thesis.html">Thesis Repository</a>
+            <span class="article-breadcrumb-sep">›</span>
+            <span>Record</span>
+          </nav>
+
+          <span class="article-type-badge">📜 Doctoral Thesis</span>
+
+          <h1 class="article-title">Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory</h1>
+          <p class="article-subtitle">रस-सिद्धान्तस्य पुनर्मूल्यांकनम् — कालिदासोत्तर-संस्कृत-काव्ये</p>
+
+          <div class="article-meta-row">
+            <a href="scholar.html?id=1" class="article-author-link">Dr. Meera Krishnamurthy</a>
+            <span class="article-meta-sep">·</span>
+            <span>Banaras Hindu University</span>
+            <span class="article-meta-sep">·</span>
+            <time datetime="2024">2024</time>
+            <span class="article-meta-sep">·</span>
+            <span>Ph.D. Dissertation</span>
+            <span class="article-meta-sep">·</span>
+            <span class="article-reading-time">⏱ ~22 min read</span>
+          </div>
+
+          <div class="tags" style="margin-bottom:var(--space-4);">
+            <span class="tag">Kāvya</span>
+            <span class="tag">Aesthetics</span>
+            <span class="tag">Rasa Theory</span>
+            <span class="tag">Abhinavagupta</span>
+            <span class="tag tag-access-open">Open Access</span>
+          </div>
+
+          <!-- Reading controls -->
+          <div class="article-controls">
+            <div class="font-size-controls" role="group" aria-label="Font size">
+              <button class="font-btn font-btn-sm" data-size="decrease" aria-label="Decrease font size">A−</button>
+              <button class="font-btn font-btn-lg" data-size="increase" aria-label="Increase font size">A+</button>
+            </div>
+            <button id="reading-mode-article-btn" class="nav-icon-btn" aria-label="Toggle reading mode" style="font-size:var(--text-sm);">
+              <span class="mode-icon">☀️</span> Mode
+            </button>
+            <button id="script-toggle-article-btn" class="nav-icon-btn" aria-label="Toggle script" style="font-size:var(--text-sm);">
+              <span class="icon">अ</span> <span class="script-label">देव</span>
+            </button>
+            <button class="cite-btn cite-modal-btn"
+              data-cite-title="Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory"
+              data-cite-author="Dr. Meera Krishnamurthy"
+              data-cite-institution="Banaras Hindu University"
+              data-cite-year="2024" data-cite-degree="Ph.D."
+              style="margin-left:auto;">📋 Cite this work</button>
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <div class="article-body" id="article-body">
+
+          <p>The theory of rasa — aesthetic emotional experience — stands as one of the most sophisticated contributions of classical Sanskrit thought to global aesthetics. From its origins in the <span class="sanskrit-inline">नाट्यशास्त्र</span> (<em>Nāṭyaśāstra</em>) of Bharata to its radical reformulation by Abhinavagupta in the <span class="sanskrit-inline">अभिनवभारती</span> (<em>Abhinavabhāratī</em>), rasa theory underwent transformations that the present thesis argues have been systematically obscured by post-colonial scholarship in its privileging of Western aesthetic categories.<a href="#fn1" class="footnote-ref" aria-label="Footnote 1">[1]</a></p>
+
+          <p>This dissertation offers the first comprehensive comparative analysis of rasa theory that accounts for all major stages of the tradition: Bharata's eightfold schema, Udbhaṭa's additions, Ānandavardhana's dhvani revolution, and Abhinavagupta's phenomenological synthesis. The central argument is that rasa, properly understood, is not a theory of emotion but a theory of consciousness — the <span class="sanskrit-inline">चमत्कार</span> (<em>camatkāra</em>) that attends aesthetic experience is structurally identical to the recognition (<span class="sanskrit-inline">प्रत्यभिज्ञा</span>, <em>pratyabhijñā</em>) described in Kashmir Śaivism.<a href="#fn2" class="footnote-ref" aria-label="Footnote 2">[2]</a></p>
+
+          <h2 id="background">Background and Scope</h2>
+
+          <p>The rasa sūtra of Bharata — <span class="sanskrit-inline">विभावानुभावव्यभिचारिसंयोगाद्रसनिष्पत्तिः</span> (<em>vibhāvānubhāvavyabhicārisaṃyogādrasaniṣpattiḥ</em>) — has generated more scholarly commentary than perhaps any other sentence in the history of Sanskrit literary theory. Its deceptively simple formulation — that aesthetic emotion arises from the conjunction of determinants, consequents, and transient states — conceals a profound epistemological problem: how can an emotion that is not directly experienced be enjoyed?</p>
+
+          <div class="pull-quote">
+            <p>"Rasa is not the emotion depicted in the poem. It is the emotion recognised in oneself through the medium of the poem — and that recognition is what Abhinavagupta calls <em>sādhāraṇīkaraṇa</em>, universalisation."</p>
+            <cite>— Dr. Meera Krishnamurthy, Chapter III, p. 147</cite>
+          </div>
+
+          <p>The problem of the enjoyment of negative emotions — grief, fear, disgust — in a context of detached aesthetic appreciation is what Abhinavagupta resolved through his concept of <span class="sanskrit-inline">सामाजिक</span> (<em>sāmājika</em>) — the ideal connoisseur who, through cultivation of aesthetic sensitivity, can experience the transformative recognition that aesthetic emotion offers.</p>
+
+          <h2 id="methodology">Methodology</h2>
+
+          <p>The dissertation employs a tripartite methodology: first, close philological reading of primary Sanskrit texts in their original; second, engagement with modern phenomenological aesthetics (Ingarden, Gadamer, Merleau-Ponty) as comparative interlocutors rather than superior frameworks; third, reception-history analysis of how rasa theory has been taught and transmitted in contemporary Sanskrit academies in Varanasi and Mysore.<a href="#fn3" class="footnote-ref" aria-label="Footnote 3">[3]</a></p>
+
+          <h3 id="primary-sources">Primary Sources</h3>
+          <p>The primary texts consulted include the <em>Nāṭyaśāstra</em> (ed. Ghosh), <em>Dhvanyāloka</em> (ed. Krishnamoorthy), <em>Abhinavabhāratī</em> (ed. Ramakrishna Kavi), <em>Locana</em> (ed. Gnoli), and <em>Tantrāloka</em> chapters on śaktipāta for the philosophical context of Abhinavagupta's aesthetics. All translations are the author's own.</p>
+
+          <h3 id="field-research">Field Research</h3>
+          <p>Twelve months of field research were conducted in Varanasi between 2021–2022, including structured interviews with fifteen scholars trained in the traditional <span class="sanskrit-inline">व्याकरण</span> and <span class="sanskrit-inline">अलङ्कार</span> curricula, as well as participant observation in advanced śāstra seminars at Sampurnanand Sanskrit University.</p>
+
+          <h2 id="findings">Key Findings</h2>
+
+          <p>The thesis establishes four principal findings that advance the existing scholarship:</p>
+
+          <p><strong>Finding 1 — The Śaiva substrate of Abhinava's rasa theory:</strong> Abhinavagupta's reconceptualisation of rasa as a form of brahma-sāmānya (universalised consciousness-bliss) is not a late addition to aesthetic theory but the culmination of a continuous tradition stretching from Bharata's own Vedic context.</p>
+
+          <p><strong>Finding 2 — The nine-rasa problem:</strong> The addition of śānta (tranquillity) as the ninth rasa, contested since the 9th century, is defended here not merely on canonical grounds but through a new argument derived from the structure of Abhinavagupta's phenomenology of aesthetic recognition.</p>
+
+          <p><strong>Finding 3 — Dhvani and rasa as unified:</strong> Ānandavardhana's dhvani theory and rasa theory, treated as separate developments in standard scholarship, are shown to be two aspects of a single theory of aesthetic resonance — dhvani being the linguistic mechanism, rasa the experiential outcome.</p>
+
+          <p><strong>Finding 4 — Living tradition:</strong> The traditional Varanasi scholars interviewed for this thesis maintain rasa theory as a living practice of textual interpretation, not merely a historical curiosity, demonstrating the continued relevance of the Sanskrit aesthetic tradition.</p>
+
+          <h2 id="conclusions">Conclusions</h2>
+
+          <p>This thesis has argued that rasa theory, in its fully developed form as articulated by Abhinavagupta, constitutes a rigorous phenomenology of aesthetic consciousness that not only rivals but in certain respects surpasses Western aesthetic theories in its sophistication. The Śaiva context of Abhinavagupta's formulation is not a metaphysical excess to be bracketed away, but the key to understanding why rasa alone, among world aesthetic theories, explains the paradox of the enjoyment of negative emotions with such philosophical precision.</p>
+
+          <p>Future research directions include: a computational corpus study of rasa-related terminology across the GRETIL Sanskrit corpus; a pedagogical study of how rasa is taught in contemporary Indian university Sanskrit departments; and a comparative study with Chinese aesthetic theory, where parallel concerns about emotional distance in art have generated related conceptual solutions.</p>
+
+        </div><!-- /article-body -->
+
+        <!-- Footnotes (hidden, referenced by popup) -->
+        <div class="sr-only" aria-hidden="true">
+          <div id="fn1">Pollock, S. (2016). <em>A Rasa Reader: Classical Indian Aesthetics</em>. Columbia University Press. For a critique of Pollock's framework, see Ganeri, J. (2018) 'Rasa and the Boundaries of Aesthetic Theory,' <em>Journal of Aesthetics and Art Criticism</em> 76(3).</div>
+          <div id="fn2">Abhinavagupta, <em>Abhinavabhāratī</em> on NS 6.31, ed. Ramakrishna Kavi, vol. 1, pp. 272–286. The parallel with <em>pratyabhijñā</em> is developed in Gnoli, R. (1968) <em>The Aesthetic Experience According to Abhinavagupta</em>.</div>
+          <div id="fn3">Interviews conducted under IRB Protocol No. BHU-SS-2021-047. Participants are anonymised per standard scholarly convention; institutional affiliations are reported with permission.</div>
+        </div>
+
+        <!-- Footnote popup container -->
+        <div class="footnote-popup" id="footnote-popup" role="complementary" aria-label="Footnote">
+          <button class="footnote-close" aria-label="Close footnote">×</button>
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="article-footer">
+
+          <!-- Citation block -->
+          <div class="citation-block">
+            <div class="citation-block-label">Cite this work</div>
+            <div class="citation-block-text">Krishnamurthy, M. (2024). <em>Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory</em> [Ph.D. dissertation, Banaras Hindu University]. SoXa Sanskrit Platform.</div>
+            <button class="citation-copy-inline" aria-label="Copy APA citation">📋 Copy citation</button>
+            &nbsp;&nbsp;
+            <button class="cite-modal-btn cite-btn"
+              data-cite-title="Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory"
+              data-cite-author="Dr. Meera Krishnamurthy"
+              data-cite-institution="Banaras Hindu University"
+              data-cite-year="2024" data-cite-degree="Ph.D."
+              style="margin-left:0;">All 5 formats →</button>
+          </div>
+
+          <!-- Download buttons -->
+          <div class="download-btns">
+            <a href="#" class="download-btn download-btn-pdf" aria-label="Download PDF">
+              📄 Download PDF
+            </a>
+            <a href="#" class="download-btn download-btn-epub" aria-label="Download EPUB">
+              📖 Download EPUB
+            </a>
+          </div>
+
+          <!-- Author bio chip -->
+          <a href="scholar.html?id=1" class="author-bio-chip" aria-label="View Dr. Meera Krishnamurthy's profile">
+            <div class="author-avatar" aria-hidden="true">MK</div>
+            <div>
+              <div class="author-bio-name">Dr. Meera Krishnamurthy</div>
+              <div class="author-bio-role">Assistant Professor · Banaras Hindu University · 8 contributions</div>
+            </div>
+          </a>
+
+          <!-- Related articles -->
+          <div class="related-articles">
+            <div class="related-title">Related Records</div>
+            <div class="related-grid">
+              <a href="record.html?type=thesis&id=4" class="related-card">
+                <div class="related-card-type">Thesis · 2021</div>
+                <div class="related-card-title">Women in Vedic Literature: Revisiting the ṚgVeda</div>
+              </a>
+              <a href="record.html?type=thesis&id=2" class="related-card">
+                <div class="related-card-type">Thesis · 2023</div>
+                <div class="related-card-title">The Mahābhāṣya on Pāṇini's Grammar: A Computational Approach</div>
+              </a>
+              <a href="record.html?type=literary&id=3" class="related-card">
+                <div class="related-card-type">Literary History · Article</div>
+                <div class="related-card-title">Kālidāsa and the Gupta Golden Age of Sanskrit Literature</div>
+              </a>
+            </div>
+          </div>
+
+        </footer>
+
+      </article><!-- /article -->
+
+      <!-- ── STICKY SIDEBAR ───────────────────────────────────── -->
+      <aside class="toc-sidebar" aria-label="Article navigation">
+
+        <!-- Progress Ring -->
+        <div class="progress-ring-container">
+          <div class="progress-ring" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <circle class="progress-ring-track" cx="20" cy="20" r="17"/>
+              <circle class="progress-ring-fill" cx="20" cy="20" r="17"
+                stroke-dasharray="107" stroke-dashoffset="107"/>
+            </svg>
+            <div class="progress-ring-text" role="status" aria-live="polite">0%</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-ui);font-size:var(--text-xs);font-weight:600;color:var(--color-text-secondary);">Reading Progress</div>
+            <div style="font-family:var(--font-ui);font-size:10px;color:var(--color-text-tertiary);">Scroll to advance</div>
+          </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc-label">Contents</div>
+        <ol class="toc-list" id="toc-list" aria-label="Article sections">
+          <!-- Populated by JS from article-body h2/h3 -->
+        </ol>
+
+        <!-- Sidebar Actions -->
+        <div class="toc-actions">
+          <button class="toc-action-btn cite-modal-btn"
+            data-cite-title="Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory"
+            data-cite-author="Dr. Meera Krishnamurthy"
+            data-cite-institution="Banaras Hindu University"
+            data-cite-year="2024" data-cite-degree="Ph.D.">
+            📋 Cite (5 formats)
+          </button>
+          <a href="thesis.html" class="toc-action-btn" style="text-align:left;">
+            ← Back to Thesis Repository
+          </a>
+          <button class="toc-action-btn" onclick="navigator.share?.({title:document.title,url:location.href}) || (navigator.clipboard.writeText(location.href),this.textContent='✓ Link copied',setTimeout(()=>this.textContent='🔗 Share link',2000))">
+            🔗 Share link
+          </button>
+        </div>
+
+      </aside>
+
+    </div><!-- /reading-page-layout -->
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-name">SoXa</span><span class="logo-subtitle">Sanskrit Platform</span></a><p class="footer-brand-desc">Open-access Sanskrit scholarly hub. All content CC BY 4.0.</p></div>
+          <div><h3 class="footer-col-title">Repositories</h3><ul class="footer-links"><li><a href="thesis.html">Thesis Repository</a></li><li><a href="epigraphical.html">Epigraphical Archive</a></li><li><a href="literary-history.html">Literary History</a></li></ul></div>
+          <div><h3 class="footer-col-title">Platform</h3><ul class="footer-links"><li><a href="developments.html">Developments</a></li><li><a href="cfp.html">CFP Tracker</a></li><li><a href="journal.html">Journal</a></li><li><a href="about.html">About</a></li></ul></div>
+          <div><h3 class="footer-col-title">Contact</h3><p class="footer-contact-item"><a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a></p></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. CC BY 4.0.</p><ul class="footer-legal"><li><a href="#">Privacy</a></li><li><a href="#">Accessibility</a></li></ul></div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul class="bottom-nav-items">
+      <li><a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏛️</span>Home</a></li>
+      <li><a href="repositories.html" class="bottom-nav-item active"><span class="nav-icon">📚</span>Repos</a></li>
+      <li><a href="developments.html" class="bottom-nav-item"><span class="nav-icon">📰</span>Devs</a></li>
+      <li><a href="about.html" class="bottom-nav-item"><span class="nav-icon">ℹ️</span>About</a></li>
+      <li><a href="contact.html" class="bottom-nav-item"><span class="nav-icon">✉️</span>Contact</a></li>
+    </ul>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>

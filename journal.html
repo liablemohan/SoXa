@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoXa Annual Review of Sanskrit Studies — Journal — SoXa</title>
+  <meta name="description" content="SoXa Annual Review of Sanskrit Studies: open-access peer-reviewed journal publishing original scholarship in Sanskrit, Indology, and related disciplines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" data-trn="home">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger" role="menuitem"
+             aria-haspopup="true" aria-expanded="false" data-trn="repositories">
+            Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem" data-trn="title_thesis">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem" data-trn="title_epigraphical">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem" data-trn="title_literary">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" role="menuitem" data-trn="developments">Developments</a></li>
+        <li role="none"><a href="community.html" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <!-- Search -->
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off"
+                 data-trn-placeholder="search_placeholder">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">
+            🔍
+          </button>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+
+        <!-- User Accounts Menu -->
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown">
+            <!-- Dynamic items rendered by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Script toggle -->
+        <button id="script-toggle-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle script: Devanāgarī / IAST / Roman" title="Toggle script">
+          <span class="icon">अ</span>
+          <span class="script-label">देव</span>
+        </button>
+
+        <!-- Reading mode -->
+        <button id="reading-mode-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Journal Masthead -->
+    <header class="journal-masthead" aria-labelledby="journal-name">
+      <div class="container">
+        <div class="journal-masthead-inner">
+          <div class="journal-logo-mark" aria-hidden="true">
+            <span style="font-family:var(--font-devanagari,serif);font-size:2.5rem;line-height:1;">सं</span>
+          </div>
+          <div>
+            <span class="journal-issn">ISSN 2984-7102 (Online) · Open Access · CC BY 4.0</span>
+            <h1 class="journal-title" id="journal-name">SoXa Annual Review of Sanskrit Studies</h1>
+            <p class="journal-tagline">Peer-reviewed scholarship at the intersection of traditional vidyā and modern methodology.</p>
+            <div class="journal-stats">
+              <div class="journal-stat"><strong>1</strong><span>Volume</span></div>
+              <div class="journal-stat"><strong>12</strong><span>Articles published</span></div>
+              <div class="journal-stat"><strong>8 weeks</strong><span>Avg. review time</span></div>
+              <div class="journal-stat"><strong>100%</strong><span>Open access</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Current Issue -->
+    <section class="section" aria-labelledby="current-issue-heading">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 260px;gap:var(--space-12);align-items:start;">
+          <div>
+            <h2 id="current-issue-heading" style="font-family:var(--font-heading);font-size:var(--text-2xl);margin-bottom:var(--space-2);">Current Issue</h2>
+            <p style="font-family:var(--font-ui);font-size:var(--text-sm);color:var(--color-text-tertiary);margin-bottom:var(--space-8);">Volume 1, 2025 · 12 articles · Published February 2025</p>
+
+            <!-- Article entries -->
+            <div class="journal-article-list">
+
+              <article class="journal-article-entry animate-on-scroll">
+                <span class="journal-article-section">Linguistics &amp; Grammar</span>
+                <h3 class="journal-article-title">
+                  <a href="record.html?type=journal&id=1">Kārakādhikāra in Pāṇini's Aṣṭādhyāyī: A Formal Re-analysis of Cases 1–4</a>
+                </h3>
+                <div class="journal-article-authors">
+                  Pradeep Suryanath &amp; Amitabha Mukhopadhyay
+                </div>
+                <div class="journal-article-meta">
+                  pp. 1–38 · <a href="#" class="journal-doi-link">DOI: 10.29381/soxar.2025.001</a> ·
+                  <button class="cite-btn cite-modal-btn" style="padding:2px 8px;font-size:var(--text-xs);"
+                    data-cite-title="Kārakādhikāra in Pāṇini's Aṣṭādhyāyī: A Formal Re-analysis of Cases 1–4"
+                    data-cite-author="Pradeep Suryanath"
+                    data-cite-institution="SoXa Annual Review of Sanskrit Studies"
+                    data-cite-year="2025">Cite</button>
+                </div>
+                <p class="journal-article-abstract">Applies modern syntactic theory (Dependency Grammar and Government–Binding) to Pāṇini's account of the kāraka relations, arguing that the Aṣṭādhyāyī implicitly encodes a theory of grammatical functions irreducible to traditional case semantics.</p>
+              </article>
+
+              <article class="journal-article-entry animate-on-scroll">
+                <span class="journal-article-section">Aesthetics &amp; Philosophy</span>
+                <h3 class="journal-article-title">
+                  <a href="record.html?type=journal&id=2">Dhvani and Indirect Meaning: Ānandavardhana's Contribution to a General Theory of Implicature</a>
+                </h3>
+                <div class="journal-article-authors">Dr. Kavita Ramachandran</div>
+                <div class="journal-article-meta">
+                  pp. 39–74 · <a href="#" class="journal-doi-link">DOI: 10.29381/soxar.2025.002</a> ·
+                  <button class="cite-btn cite-modal-btn" style="padding:2px 8px;font-size:var(--text-xs);"
+                    data-cite-title="Dhvani and Indirect Meaning"
+                    data-cite-author="Dr. Kavita Ramachandran"
+                    data-cite-institution="SoXa Annual Review of Sanskrit Studies"
+                    data-cite-year="2025">Cite</button>
+                </div>
+                <p class="journal-article-abstract">A cross-cultural comparison of Ānandavardhana's dhvani theory of poetic resonance with Grice's theory of conversational implicature, arguing for significant structural parallels that illuminate both traditions.</p>
+              </article>
+
+              <article class="journal-article-entry animate-on-scroll">
+                <span class="journal-article-section">Epigraphy</span>
+                <h3 class="journal-article-title">
+                  <a href="record.html?type=journal&id=3">A New Reading of the Nalanda Copper-plate Grant of Devapāladeva</a>
+                </h3>
+                <div class="journal-article-authors">Dr. Tanvir Ahmed Shaikh</div>
+                <div class="journal-article-meta">
+                  pp. 75–108 · <a href="#" class="journal-doi-link">DOI: 10.29381/soxar.2025.003</a> ·
+                  <button class="cite-btn cite-modal-btn" style="padding:2px 8px;font-size:var(--text-xs);"
+                    data-cite-title="A New Reading of the Nalanda Copper-plate Grant of Devapāladeva"
+                    data-cite-author="Dr. Tanvir Ahmed Shaikh"
+                    data-cite-institution="SoXa Annual Review of Sanskrit Studies"
+                    data-cite-year="2025">Cite</button>
+                </div>
+                <p class="journal-article-abstract">Offers a fresh epigraphic edition and translation of the Nalanda copper-plate grant, incorporating seventeen previously misread aksharas from infrared photography of the original plates held at the Indian Museum, Kolkata.</p>
+              </article>
+
+              <article class="journal-article-entry animate-on-scroll">
+                <span class="journal-article-section">Digital Humanities</span>
+                <h3 class="journal-article-title">
+                  <a href="record.html?type=journal&id=4">SanSkRT: A Large-Language-Model-Assisted Corpus for Sanskrit Grammatical Analysis</a>
+                </h3>
+                <div class="journal-article-authors">Nishant Varma, Dr. Anuradha Patel &amp; Sachin Hegde</div>
+                <div class="journal-article-meta">
+                  pp. 109–142 · <a href="#" class="journal-doi-link">DOI: 10.29381/soxar.2025.004</a> ·
+                  <button class="cite-btn cite-modal-btn" style="padding:2px 8px;font-size:var(--text-xs);"
+                    data-cite-title="SanSkRT: A Large-Language-Model-Assisted Corpus for Sanskrit Grammatical Analysis"
+                    data-cite-author="Nishant Varma"
+                    data-cite-institution="SoXa Annual Review of Sanskrit Studies"
+                    data-cite-year="2025">Cite</button>
+                </div>
+                <p class="journal-article-abstract">Introduces SanSkRT, a 1.2-million-word annotated Sanskrit corpus generated through a hybrid pipeline combining rule-based Pāṇinian tagging and fine-tuned LLM corrections, outperforming existing tools on word-split accuracy by 18%.</p>
+              </article>
+
+              <article class="journal-article-entry animate-on-scroll">
+                <span class="journal-article-section">History &amp; Culture</span>
+                <h3 class="journal-article-title">
+                  <a href="record.html?type=journal&id=5">Silk Road Sanskrit: Manuscript Evidence for Buddhist Transmission through Central Asia</a>
+                </h3>
+                <div class="journal-article-authors">Prof. Yaroslav Baklanov</div>
+                <div class="journal-article-meta">
+                  pp. 143–188 · <a href="#" class="journal-doi-link">DOI: 10.29381/soxar.2025.005</a> ·
+                  <button class="cite-btn cite-modal-btn" style="padding:2px 8px;font-size:var(--text-xs);"
+                    data-cite-title="Silk Road Sanskrit"
+                    data-cite-author="Prof. Yaroslav Baklanov"
+                    data-cite-institution="SoXa Annual Review of Sanskrit Studies"
+                    data-cite-year="2025">Cite</button>
+                </div>
+                <p class="journal-article-abstract">Analyses a newly discovered cache of Sanskrit-Tocharian bilingual manuscript fragments from Dunhuang, revising the scholarly consensus on the date of Mahāyāna text transmission into Central Asia by approximately two centuries.</p>
+              </article>
+
+            </div><!-- /journal-article-list -->
+
+            <div class="text-center" style="margin-top:var(--space-8);">
+              <a href="#" class="btn btn-secondary">View all 12 articles in Vol. 1</a>
+            </div>
+          </div>
+
+          <!-- Journal Sidebar -->
+          <aside style="position:sticky;top:calc(var(--nav-height,64px) + var(--space-6));">
+            <div class="journal-sidebar-block">
+              <h3 class="journal-sidebar-title">Submit to Vol. 2</h3>
+              <p style="font-family:var(--font-ui);font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.7;margin-bottom:var(--space-4);">
+                Submissions open for the 2026 volume. We welcome original articles, critical editions, and research notes in Sanskrit and Indic studies. Deadline: <strong>15 October 2026</strong>.
+              </p>
+              <a href="cfp.html" class="btn btn-primary" style="display:block;text-align:center;width:100%;">View CFP →</a>
+            </div>
+            <div class="journal-sidebar-block" style="margin-top:var(--space-4);">
+              <h3 class="journal-sidebar-title">Editorial Board</h3>
+              <ul style="font-family:var(--font-ui);font-size:var(--text-xs);color:var(--color-text-secondary);line-height:2;list-style:none;padding:0;margin:0;">
+                <li>Prof. Ashok Aklujkar <span style="color:var(--color-text-tertiary)">(UBC)</span></li>
+                <li>Dr. Wendy Doniger <span style="color:var(--color-text-tertiary)">(Chicago)</span></li>
+                <li>Prof. Arlo Griffiths <span style="color:var(--color-text-tertiary)">(EFEO)</span></li>
+                <li>Dr. Malhar Kulkarni <span style="color:var(--color-text-tertiary)">(IIT Bombay)</span></li>
+                <li>Prof. Sheldon Pollock <span style="color:var(--color-text-tertiary)">(Columbia)</span></li>
+                <li>Dr. Vincenzo Vergiani <span style="color:var(--color-text-tertiary)">(Cambridge)</span></li>
+              </ul>
+            </div>
+            <div class="journal-sidebar-block" style="margin-top:var(--space-4);">
+              <h3 class="journal-sidebar-title">Indexed In</h3>
+              <p style="font-family:var(--font-ui);font-size:var(--text-xs);color:var(--color-text-secondary);line-height:2;">DOAJ · CrossRef · OpenAlex · Scopus (pending) · Web of Science (pending)</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-name">SoXa</span><span class="logo-subtitle">Sanskrit Platform</span></a><p class="footer-brand-desc">Open-access Sanskrit scholarly hub. All content CC BY 4.0.</p></div>
+          <div><h3 class="footer-col-title">Repositories</h3><ul class="footer-links"><li><a href="thesis.html">Thesis Repository</a></li><li><a href="epigraphical.html">Epigraphical Archive</a></li><li><a href="literary-history.html">Literary History</a></li></ul></div>
+          <div><h3 class="footer-col-title">Platform</h3><ul class="footer-links"><li><a href="developments.html">Developments</a></li><li><a href="cfp.html">CFP Tracker</a></li><li><a href="journal.html">Journal</a></li><li><a href="about.html">About</a></li></ul></div>
+          <div><h3 class="footer-col-title">Contact</h3><p class="footer-contact-item"><a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a></p></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. CC BY 4.0.</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

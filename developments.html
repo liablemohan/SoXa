@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contemporary Developments — SoXa Sanskrit Platform</title>
+  <meta name="description" content="Latest developments in Sanskrit studies: journals, conferences, calls for papers, and community news.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Developments-specific styles */
+    .dev-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      margin-bottom: var(--space-5);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-6);
+      transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-base);
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .dev-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+    }
+    .dev-card-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 4px; }
+    .dev-card-content { flex: 1; }
+    .dev-card-label {
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+    .dev-card-title {
+      font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 600;
+      color: var(--color-text-primary); margin-bottom: var(--space-2);
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .dev-card-body {
+      font-size: var(--text-sm); color: var(--color-text-secondary);
+      line-height: 1.8; margin-bottom: var(--space-4); max-width: none;
+    }
+    .dev-card-meta {
+      display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center;
+    }
+    .dev-card-date {
+      font-family: var(--font-ui); font-size: var(--text-xs);
+      color: var(--color-text-tertiary); font-weight: 500;
+    }
+    .dev-card-action {
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600;
+      color: var(--color-primary); text-decoration: none; letter-spacing: 0.02em;
+    }
+    .dev-card-action:hover { text-decoration: underline; }
+    .deadline-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 700;
+      padding: 3px 10px; border-radius: var(--radius-full);
+      background: var(--color-accent-light); color: var(--color-accent);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 640px) {
+      .dev-card { flex-direction: column; gap: var(--space-4); }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" data-trn="home">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger" role="menuitem"
+             aria-haspopup="true" aria-expanded="false" data-trn="repositories">
+            Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem" data-trn="title_thesis">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem" data-trn="title_epigraphical">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem" data-trn="title_literary">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" class="active" role="menuitem" data-trn="developments">Developments</a></li>
+        <li role="none"><a href="community.html" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <!-- Search -->
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off"
+                 data-trn-placeholder="search_placeholder">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">
+            🔍
+          </button>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+
+        <!-- User Accounts Menu -->
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown">
+            <!-- Dynamic items rendered by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Script toggle -->
+        <button id="script-toggle-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle script: Devanāgarī / IAST / Roman" title="Toggle script">
+          <span class="icon">अ</span>
+          <span class="script-label">देव</span>
+        </button>
+
+        <!-- Reading mode -->
+        <button id="reading-mode-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <header class="page-header">
+      <div class="container">
+        <span class="page-header-eyebrow">📰 News &amp; Events</span>
+        <h1>Contemporary Developments</h1>
+        <p>Journals, conferences, calls for papers, and community news — the pulse of Sanskrit scholarship worldwide.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- 4-Tab navigation -->
+        <div class="tabs-wrapper">
+          <nav class="tabs-nav" aria-label="Developments sections" role="tablist">
+            <button class="tab-btn active" data-tab="tab-journals"  role="tab" aria-selected="true"  aria-controls="tab-journals">📖 Journals</button>
+            <button class="tab-btn"        data-tab="tab-conferences" role="tab" aria-selected="false" aria-controls="tab-conferences">🎤 Conferences</button>
+            <button class="tab-btn"        data-tab="tab-cfp"         role="tab" aria-selected="false" aria-controls="tab-cfp">📩 Calls for Papers</button>
+            <button class="tab-btn"        data-tab="tab-community"   role="tab" aria-selected="false" aria-controls="tab-community">🤝 Community</button>
+          </nav>
+        </div>
+
+        <!-- Tab 1: Journals -->
+        <div id="tab-journals" class="tab-pane active" role="tabpanel">
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">📖</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Journal · New Issue</p>
+              <h2 class="dev-card-title">Journal of Sanskrit Studies — Vol. 12, Issue 2 (2026)</h2>
+              <p class="dev-card-body">The latest issue includes articles on sandhi in the Mahābhārata, a new edition of a Śāradā-script Kāvya text from Kashmir, and a methodological essay on computational approaches to Sanskrit metre. ISSN 2347-8691.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">Published: May 2026</span>
+                <span class="access-badge badge-open">Open Access</span>
+                <a href="#" class="dev-card-action">View Issue →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">📖</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Journal · Annual Review</p>
+              <h2 class="dev-card-title">Annals of Oriental Research — Sanskrit Special Issue</h2>
+              <p class="dev-card-body">Annual special issue of the University of Madras series dedicated to Sanskrit and Dravidian literature studies. This year's issue focuses on cross-linguistic borrowings between Sanskrit and Tamil in the medieval period.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">Published: April 2026</span>
+                <span class="access-badge badge-restricted">Subscription</span>
+                <a href="#" class="dev-card-action">View Abstract →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">📖</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Journal · Launch</p>
+              <h2 class="dev-card-title">Sanskrit Digital Humanities Review — Inaugural Issue</h2>
+              <p class="dev-card-body">A new open-access journal dedicated to computational and digital approaches in Sanskrit studies, launched in 2026. Covers NLP, critical editions, manuscript digitisation, and digital tools for Sanskrit scholars.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">Published: March 2026</span>
+                <span class="access-badge badge-open">Open Access</span>
+                <a href="#" class="dev-card-action">Read Now →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Conferences -->
+        <div id="tab-conferences" class="tab-pane" role="tabpanel">
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">🎤</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">International Conference</p>
+              <h2 class="dev-card-title">International Sanskrit Studies Congress 2026</h2>
+              <p class="dev-card-body">The biennial flagship conference of the International Association of Sanskrit Studies (IASS), hosted by the Deccan College, Pune. Theme: "Sanskrit in the Digital Century: Preservation, Access, and Innovation." Hybrid format.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">📅 14–18 July 2026 · Pune, Maharashtra</span>
+                <a href="#" class="dev-card-action">Register →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">🎤</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Workshop</p>
+              <h2 class="dev-card-title">TEI-XML for Sanskrit Epigraphers: A Practical Workshop</h2>
+              <p class="dev-card-body">A two-day hands-on workshop introducing the Text Encoding Initiative (TEI) standard for epigraphic editions, specifically tailored for Sanskrit and Prakrit inscriptions. No prior XML experience required. Limited to 25 participants.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">📅 22–23 July 2026 · Online (Zoom) · Free</span>
+                <a href="contact.html" class="dev-card-action">Register →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">🎤</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Webinar Series</p>
+              <h2 class="dev-card-title">Sanskrit Manuscript Studies — Monthly Webinar Series (2026)</h2>
+              <p class="dev-card-body">Monthly online lectures by leading manuscript scholars, covering topics from Śāradā palaeography to the challenges of digitising birch-bark manuscripts. Hosted by the Oriental Research Institute, Baroda.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">📅 First Saturday of each month · 11:00 IST</span>
+                <a href="#" class="dev-card-action">Join Series →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: CFP -->
+        <div id="tab-cfp" class="tab-pane" role="tabpanel">
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">📩</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Call for Papers · Conference</p>
+              <h2 class="dev-card-title">CFP: Sanskrit Poetics and Performance — BHU Annual Seminar 2026</h2>
+              <p class="dev-card-body">Banaras Hindu University invites abstracts for papers on Sanskrit aesthetic theory (alaṃkāraśāstra, nāṭyaśāstra, dhvani) and their relationship to contemporary performance practice. 300-word abstracts accepted.</p>
+              <div class="dev-card-meta">
+                <span class="deadline-chip">⏰ Deadline: 15 Sep 2026</span>
+                <span class="dev-card-date">Conference: Nov 2026</span>
+                <a href="contact.html" class="dev-card-action">Submit Abstract →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">📩</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Call for Papers · Journal</p>
+              <h2 class="dev-card-title">CFP: Digital Sanskrit Studies — Special Issue of JIAS</h2>
+              <p class="dev-card-body">The Journal of Indian and Asian Studies invites full paper submissions for a special issue on digital humanities approaches in Sanskrit studies. Topics: NLP, critical editing, database design, open-access publishing.</p>
+              <div class="dev-card-meta">
+                <span class="deadline-chip">⏰ Deadline: 1 Oct 2026</span>
+                <span class="dev-card-date">Publication: Jan 2027</span>
+                <a href="#" class="dev-card-action">Submit Paper →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">📩</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Call for Contributions · SoXa Platform</p>
+              <h2 class="dev-card-title">CFP: Contribute to the SoXa Literary History Database</h2>
+              <p class="dev-card-body">SoXa invites submissions to the Literary History repository. We particularly seek articles on South Indian Sanskrit traditions, Kashmir Śaivism literary culture, and 19th–20th century Sanskrit composition. 2,000–5,000 words. Open authorship.</p>
+              <div class="dev-card-meta">
+                <span class="deadline-chip">⏰ Rolling deadline</span>
+                <span class="access-badge badge-open">Open Access</span>
+                <a href="contact.html" class="dev-card-action">Contribute →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Community -->
+        <div id="tab-community" class="tab-pane" role="tabpanel">
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">🏅</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Community · Milestone</p>
+              <h2 class="dev-card-title">SoXa Reaches 1,000th Inscription in Epigraphical Archive</h2>
+              <p class="dev-card-body">The Epigraphical Archive milestone: the 1,000th inscription was submitted by Prof. T. Krishnamurthy of the Institute of Epigraphy, Archaeological Survey of India — a 9th-century Tamil-Sanskrit bilingual record from Kanchipuram. Thank you to all 87 contributing scholars.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">May 2026</span>
+                <a href="epigraphical.html" class="dev-card-action">View Archive →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">🤝</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Community · Partnership</p>
+              <h2 class="dev-card-title">SoXa Partners with the Oriental Research Institute, Baroda</h2>
+              <p class="dev-card-body">SoXa announces a formal partnership with the Bhandarkar Oriental Research Institute (BORI), Pune, and the Oriental Research Institute, Baroda (ORI-MSU), to digitise and openly publish critical editions from their vast manuscript collections.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">April 2026</span>
+                <a href="contact.html" class="dev-card-action">Learn More →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dev-card animate-on-scroll">
+            <div class="dev-card-icon">🌍</div>
+            <div class="dev-card-content">
+              <p class="dev-card-label">Community · Spotlight</p>
+              <h2 class="dev-card-title">Contributor Spotlight: Dr. Ranjini Suresh on Open Access and Sanskrit Scholarship</h2>
+              <p class="dev-card-body">In this month's community spotlight, Dr. Ranjini Suresh (University of Hyderabad) speaks about why she chose to publish her epigraphic edition exclusively through SoXa, the challenges of open-access scholarship in India, and her upcoming work on Pallava-period donative records.</p>
+              <div class="dev-card-meta">
+                <span class="dev-card-date">March 2026</span>
+                <a href="#" class="dev-card-action">Read Interview →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section" aria-labelledby="dev-newsletter-heading">
+      <div class="container">
+        <div class="newsletter-content">
+          <p class="newsletter-eyebrow">Never Miss a Development</p>
+          <h2 class="newsletter-title" id="dev-newsletter-heading">Get the Monthly Digest</h2>
+          <p class="newsletter-subtitle">New journals, upcoming conferences, CFP deadlines, and community news — delivered once a month.</p>
+          <form class="newsletter-form" novalidate>
+            <label for="dev-email" class="sr-only">Your email address</label>
+            <input id="dev-email" class="newsletter-input" type="email" placeholder="your@email.com" autocomplete="email" required>
+            <button type="submit" class="btn btn-accent">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-name">SoXa</span><span class="logo-subtitle">Sanskrit Platform</span></a><p class="footer-brand-desc">Open-access Sanskrit scholarly hub. All content CC BY 4.0.</p></div>
+          <div><h3 class="footer-col-title">Repositories</h3><ul class="footer-links"><li><a href="thesis.html">Thesis Repository</a></li><li><a href="epigraphical.html">Epigraphical Archive</a></li><li><a href="literary-history.html">Literary History</a></li></ul></div>
+          <div><h3 class="footer-col-title">Platform</h3><ul class="footer-links"><li><a href="developments.html">Developments</a></li><li><a href="cfp.html">CFP Tracker</a></li><li><a href="journal.html">Journal</a></li><li><a href="about.html">About</a></li></ul></div>
+          <div><h3 class="footer-col-title">Contact</h3><p class="footer-contact-item"><a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a></p></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. CC BY 4.0.</p><ul class="footer-legal"><li><a href="#">Privacy</a></li><li><a href="#">Accessibility</a></li></ul></div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul class="bottom-nav-items">
+      <li><a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏛️</span>Home</a></li>
+      <li><a href="repositories.html" class="bottom-nav-item"><span class="nav-icon">📚</span>Repos</a></li>
+      <li><a href="developments.html" class="bottom-nav-item active"><span class="nav-icon">📰</span>Devs</a></li>
+      <li><a href="about.html" class="bottom-nav-item"><span class="nav-icon">ℹ️</span>About</a></li>
+      <li><a href="contact.html" class="bottom-nav-item"><span class="nav-icon">✉️</span>Contact</a></li>
+    </ul>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>

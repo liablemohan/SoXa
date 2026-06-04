@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thesis Repository — SoXa Sanskrit Platform</title>
+  <meta name="description" content="Browse 240+ open-access doctoral and postgraduate theses in Sanskrit studies, Indology, and related disciplines from universities across India and the world.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem" data-trn="home">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger active" role="menuitem"
+             aria-haspopup="true" aria-expanded="false" data-trn="repositories">
+            Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem" data-trn="title_thesis">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem" data-trn="title_epigraphical">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem" data-trn="title_literary">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" role="menuitem" data-trn="developments">Developments</a></li>
+        <li role="none"><a href="community.html" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <!-- Search -->
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off"
+                 data-trn-placeholder="search_placeholder">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">
+            🔍
+          </button>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+
+        <!-- User Accounts Menu -->
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown">
+            <!-- Dynamic items rendered by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Script toggle -->
+        <button id="script-toggle-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle script: Devanāgarī / IAST / Roman" title="Toggle script">
+          <span class="icon">अ</span>
+          <span class="script-label">देव</span>
+        </button>
+
+        <!-- Reading mode -->
+        <button id="reading-mode-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <header class="page-header">
+      <div class="container">
+        <span class="page-header-eyebrow">📜 Repository</span>
+        <h1>Thesis Repository</h1>
+        <p>Doctoral and postgraduate theses in Sanskrit studies, Indology, Linguistics, and related disciplines. Freely citable, fully downloadable.</p>
+        <div class="page-header-stats">
+          <div class="page-stat"><span class="page-stat-number">240+</span><span class="page-stat-label">Theses</span></div>
+          <div class="page-stat"><span class="page-stat-number">60+</span><span class="page-stat-label">Universities</span></div>
+          <div class="page-stat"><span class="page-stat-number">1975</span><span class="page-stat-label">Earliest Entry</span></div>
+          <div class="page-stat"><span class="page-stat-number">100%</span><span class="page-stat-label">Open Access</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Mobile filter button -->
+        <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-5);" class="hide-desktop-only">
+          <button class="filter-mobile-btn" id="filter-mobile-btn" aria-label="Open filters">
+            ⚙ Filters
+            <span class="filter-count-badge">0</span>
+          </button>
+        </div>
+
+        <!-- Active filter chips (above layout) -->
+        <div class="active-filters" id="active-filters" role="list" aria-label="Active filters"></div>
+
+        <!-- Mobile sidebar backdrop -->
+        <div class="filter-sidebar-backdrop" id="filter-backdrop"></div>
+
+        <div class="repo-listing-layout">
+
+          <!-- Filter Sidebar -->
+          <aside class="filter-sidebar" id="filter-sidebar" aria-label="Repository filters">
+            <div class="filter-sidebar-title">
+              Filters
+              <button class="filter-clear-all" id="filter-clear-all" aria-label="Clear all filters">Clear all</button>
+            </div>
+
+            <div class="search-box-wrapper" style="display:flex; gap:var(--space-2); align-items:center; margin-bottom:var(--space-4);">
+              <input class="filter-search" style="flex-grow:1; margin-bottom:0;" id="filter-search" type="search" placeholder="Search within thesis repository…" autocomplete="off" aria-label="Search theses">
+              <button class="save-search-btn" id="save-search-btn" title="Save this search" type="button">⭐</button>
+            </div>
+
+            <!-- Subject / Field -->
+            <div class="filter-group">
+              <div class="filter-group-label" role="button" tabindex="0" aria-expanded="true">
+                Subject / Field
+                <span class="filter-group-toggle">▾</span>
+              </div>
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Kāvya"> Kāvya &amp; Poetics <span class="filter-option-count">42</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Grammar"> Grammar &amp; Linguistics <span class="filter-option-count">38</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Philosophy"> Philosophy <span class="filter-option-count">35</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Dharmaśāstra"> Dharmaśāstra <span class="filter-option-count">28</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Vedic"> Vedic Studies <span class="filter-option-count">24</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Manuscript"> Manuscript Studies <span class="filter-option-count">18</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="subject" value="Computational"> Computational Sanskrit <span class="filter-option-count">12</span></label>
+              </div>
+            </div>
+
+            <!-- Access Level -->
+            <div class="filter-group">
+              <div class="filter-group-label" role="button" tabindex="0" aria-expanded="true">
+                Access Level
+                <span class="filter-group-toggle">▾</span>
+              </div>
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="access" value="Open"> Open Access <span class="filter-option-count">185</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="access" value="Download"> Download Available <span class="filter-option-count">40</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="access" value="Restricted"> Restricted <span class="filter-option-count">15</span></label>
+              </div>
+            </div>
+
+            <!-- Degree -->
+            <div class="filter-group">
+              <div class="filter-group-label" role="button" tabindex="0" aria-expanded="true">
+                Degree
+                <span class="filter-group-toggle">▾</span>
+              </div>
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="degree" value="Ph.D."> Ph.D. <span class="filter-option-count">195</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="degree" value="D.Phil."> D.Phil. <span class="filter-option-count">22</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="degree" value="M.Phil."> M.Phil. <span class="filter-option-count">18</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="degree" value="Litt.D."> Litt.D. <span class="filter-option-count">5</span></label>
+              </div>
+            </div>
+
+            <!-- Institution -->
+            <div class="filter-group">
+              <div class="filter-group-label" role="button" tabindex="0" aria-expanded="false">
+                Institution
+                <span class="filter-group-toggle">▾</span>
+              </div>
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="institution" value="Banaras Hindu University"> BHU <span class="filter-option-count">42</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="institution" value="IIT Kanpur"> IIT Kanpur <span class="filter-option-count">18</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="institution" value="University of Oxford"> Oxford <span class="filter-option-count">14</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="institution" value="University of Delhi"> Delhi <span class="filter-option-count">30</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="institution" value="University of Calicut"> Calicut <span class="filter-option-count">8</span></label>
+              </div>
+            </div>
+
+            <!-- Year Range -->
+            <div class="filter-group">
+              <div class="filter-group-label" role="button" tabindex="0" aria-expanded="false">
+                Decade
+                <span class="filter-group-toggle">▾</span>
+              </div>
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="decade" value="2020"> 2020–present <span class="filter-option-count">48</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="decade" value="2010"> 2010–2019 <span class="filter-option-count">82</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="decade" value="2000"> 2000–2009 <span class="filter-option-count">65</span></label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="decade" value="1990"> Pre-2000 <span class="filter-option-count">45</span></label>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Content Area -->
+          <div>
+            <!-- Sort Bar -->
+            <div class="sort-bar">
+              <div class="sort-bar-left">
+                <div class="result-count">Showing <strong id="result-count">6</strong> of 240+ theses</div>
+                <div class="sort-btns" role="group" aria-label="Sort order">
+                  <button class="sort-btn active" data-sort="newest">Newest</button>
+                  <button class="sort-btn" data-sort="oldest">Oldest</button>
+                  <button class="sort-btn" data-sort="cited">Most Cited</button>
+                </div>
+              </div>
+              <div class="export-btns">
+                <button class="export-btn" data-export="csv" aria-label="Export as CSV"><span class="export-icon">⬇</span> CSV</button>
+                <button class="export-btn" data-export="bibtex" aria-label="Export as BibTeX"><span class="export-icon">⬇</span> BibTeX</button>
+              </div>
+            </div>
+
+            <!-- Zero state -->
+            <div class="zero-state" id="zero-state" role="status" aria-live="polite">
+              <div class="zero-state-icon">🔍</div>
+              <div class="zero-state-title">No theses found</div>
+              <p class="zero-state-body">Try adjusting your filters or <a href="contact.html" style="color:var(--color-primary)">submit a thesis</a> to add it to our collection.</p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="repo-grid repo-cards-grid" id="thesis-grid" data-filterable data-paginate data-page-size="3">
+
+              <article class="repo-card animate-on-scroll"
+                data-year="2024" data-citations="42"
+                data-cite-title="Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory"
+                data-cite-author="Dr. Meera Krishnamurthy"
+                data-cite-institution="Banaras Hindu University"
+                data-cite-year="2024" data-cite-degree="Ph.D.">
+                <div class="repo-card-header">
+                  <div>
+                    <h2 class="repo-card-title">Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory</h2>
+                    <span class="repo-card-deva">रस-सिद्धान्तस्य पुनर्मूल्यांकनम्</span>
+                  </div>
+                  <span class="access-badge badge-open">Open</span>
+                </div>
+                <div class="repo-card-body">
+                  <div class="repo-card-meta">
+                    <span class="repo-meta-item"><strong>Author:</strong> Dr. Meera Krishnamurthy</span>
+                    <span class="repo-meta-item"><strong>Institution:</strong> Banaras Hindu University</span>
+                    <span class="repo-meta-item"><strong>Year:</strong> 2024</span>
+                    <span class="repo-meta-item"><strong>Degree:</strong> Ph.D.</span>
+                  </div>
+                  <p class="repo-card-abstract">This doctoral thesis examines the evolution of rasa theory across the Nāṭyaśāstra, Dhvanyāloka, and later commentarial traditions, proposing a unified framework for aesthetic experience in classical Sanskrit poetry. Special attention is given to Abhinavagupta's innovations.</p>
+                </div>
+                <div class="repo-card-footer">
+                  <div class="tags" style="margin:0;">
+                    <span class="tag">Kāvya</span><span class="tag">Aesthetics</span><span class="tag">Rasa</span>
+                  </div>
+                  <div style="display:flex;gap:var(--space-2);">
+                    <a href="record.html?type=thesis&id=1" class="cite-btn" style="text-decoration:none;">View record →</a>
+                    <button class="cite-btn cite-modal-btn"
+                      data-cite-title="Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory"
+                      data-cite-author="Dr. Meera Krishnamurthy"
+                      data-cite-institution="Banaras Hindu University"
+                      data-cite-year="2024" data-cite-degree="Ph.D.">Cite</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="repo-card animate-on-scroll"
+                data-year="2023" data-citations="67"
+                data-cite-title="The Mahābhāṣya on Pāṇini's Grammar: A Computational Approach to Rule Interaction"
+                data-cite-author="Arjun Nambiar"
+                data-cite-institution="IIT Kanpur"
+                data-cite-year="2023" data-cite-degree="Ph.D.">
+                <div class="repo-card-header">
+                  <div>
+                    <h2 class="repo-card-title">The Mahābhāṣya on Pāṇini's Grammar: A Computational Approach to Rule Interaction</h2>
+                    <span class="repo-card-deva">पाणिनीयव्याकरणे सङ्गणकीय-अध्ययनम्</span>
+                  </div>
+                  <span class="access-badge badge-download">Download</span>
+                </div>
+                <div class="repo-card-body">
+                  <div class="repo-card-meta">
+                    <span class="repo-meta-item"><strong>Author:</strong> Arjun Nambiar</span>
+                    <span class="repo-meta-item"><strong>Institution:</strong> IIT Kanpur</span>
+                    <span class="repo-meta-item"><strong>Year:</strong> 2023</span>
+                    <span class="repo-meta-item"><strong>Degree:</strong> Ph.D.</span>
+                  </div>
+                  <p class="repo-card-abstract">A computational formal analysis of rule conflict resolution in Pāṇini's Aṣṭādhyāyī as interpreted in Patañjali's Mahābhāṣya. Using a graph-based algorithm, the thesis resolves over 300 previously disputed rule interactions.</p>
+                </div>
+                <div class="repo-card-footer">
+                  <div class="tags" style="margin:0;">
+                    <span class="tag">Grammar</span><span class="tag">Pāṇini</span><span class="tag">Computational</span>
+                  </div>
+                  <div style="display:flex;gap:var(--space-2);">
+                    <a href="record.html?type=thesis&id=2" class="cite-btn" style="text-decoration:none;">View record →</a>
+                    <button class="cite-btn cite-modal-btn"
+                      data-cite-title="The Mahābhāṣya on Pāṇini's Grammar: A Computational Approach to Rule Interaction"
+                      data-cite-author="Arjun Nambiar"
+                      data-cite-institution="IIT Kanpur"
+                      data-cite-year="2023" data-cite-degree="Ph.D.">Cite</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="repo-card animate-on-scroll"
+                data-year="2022" data-citations="89"
+                data-cite-title="Dharmaśāstra and Legal Pluralism in Colonial India: The Limits of Textual Authority"
+                data-cite-author="Priya Balakrishnan"
+                data-cite-institution="University of Oxford"
+                data-cite-year="2022" data-cite-degree="D.Phil.">
+                <div class="repo-card-header">
+                  <div>
+                    <h2 class="repo-card-title">Dharmaśāstra and Legal Pluralism in Colonial India: The Limits of Textual Authority</h2>
+                  </div>
+                  <span class="access-badge badge-open">Open</span>
+                </div>
+                <div class="repo-card-body">
+                  <div class="repo-card-meta">
+                    <span class="repo-meta-item"><strong>Author:</strong> Priya Balakrishnan</span>
+                    <span class="repo-meta-item"><strong>Institution:</strong> University of Oxford</span>
+                    <span class="repo-meta-item"><strong>Year:</strong> 2022</span>
+                    <span class="repo-meta-item"><strong>Degree:</strong> D.Phil.</span>
+                  </div>
+                  <p class="repo-card-abstract">Examines how British colonial administrators selectively translated and applied Dharmaśāstra texts in the Anglo-Indian legal system, arguing that the codification of Hindu law fundamentally distorted the authority and scope of the original Sanskrit sources.</p>
+                </div>
+                <div class="repo-card-footer">
+                  <div class="tags" style="margin:0;">
+                    <span class="tag">Dharmaśāstra</span><span class="tag">Colonial History</span><span class="tag">Legal Studies</span>
+                  </div>
+                  <div style="display:flex;gap:var(--space-2);">
+                    <a href="record.html?type=thesis&id=3" class="cite-btn" style="text-decoration:none;">View record →</a>
+                    <button class="cite-btn cite-modal-btn"
+                      data-cite-title="Dharmaśāstra and Legal Pluralism in Colonial India"
+                      data-cite-author="Priya Balakrishnan"
+                      data-cite-institution="University of Oxford"
+                      data-cite-year="2022" data-cite-degree="D.Phil.">Cite</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="repo-card animate-on-scroll"
+                data-year="2021" data-citations="55"
+                data-cite-title="Women in Vedic Literature: Revisiting the ṚgVeda and its Commentarial Tradition"
+                data-cite-author="Dr. Sushmita Devi"
+                data-cite-institution="University of Delhi"
+                data-cite-year="2021" data-cite-degree="Ph.D.">
+                <div class="repo-card-header">
+                  <div>
+                    <h2 class="repo-card-title">Women in Vedic Literature: Revisiting the ṚgVeda and its Commentarial Tradition</h2>
+                    <span class="repo-card-deva">ऋग्वेदे नारी: पुनरावलोकनम्</span>
+                  </div>
+                  <span class="access-badge badge-open">Open</span>
+                </div>
+                <div class="repo-card-body">
+                  <div class="repo-card-meta">
+                    <span class="repo-meta-item"><strong>Author:</strong> Dr. Sushmita Devi</span>
+                    <span class="repo-meta-item"><strong>Institution:</strong> University of Delhi</span>
+                    <span class="repo-meta-item"><strong>Year:</strong> 2021</span>
+                    <span class="repo-meta-item"><strong>Degree:</strong> Ph.D.</span>
+                  </div>
+                  <p class="repo-card-abstract">Challenges prevailing interpretations of female agency in the ṚgVeda by reading the Dīrghajihvī and Viśpālā hymns against Sāyaṇa's commentary. Argues for a more nuanced reading that recovers active feminine voices suppressed in later tradition.</p>
+                </div>
+                <div class="repo-card-footer">
+                  <div class="tags" style="margin:0;">
+                    <span class="tag">Vedic</span><span class="tag">Gender Studies</span><span class="tag">ṚgVeda</span>
+                  </div>
+                  <div style="display:flex;gap:var(--space-2);">
+                    <a href="record.html?type=thesis&id=4" class="cite-btn" style="text-decoration:none;">View record →</a>
+                    <button class="cite-btn cite-modal-btn"
+                      data-cite-title="Women in Vedic Literature: Revisiting the ṚgVeda"
+                      data-cite-author="Dr. Sushmita Devi"
+                      data-cite-institution="University of Delhi"
+                      data-cite-year="2021" data-cite-degree="Ph.D.">Cite</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="repo-card animate-on-scroll"
+                data-year="2020" data-citations="31"
+                data-cite-title="The Yoga Sūtras of Patañjali: A Comparative Study of Modern Interpretive Traditions"
+                data-cite-author="Dr. Rohan Mehta"
+                data-cite-institution="Tilburg University"
+                data-cite-year="2020" data-cite-degree="Ph.D.">
+                <div class="repo-card-header">
+                  <div>
+                    <h2 class="repo-card-title">The Yoga Sūtras of Patañjali: A Comparative Study of Modern Interpretive Traditions</h2>
+                  </div>
+                  <span class="access-badge badge-restricted">Restricted</span>
+                </div>
+                <div class="repo-card-body">
+                  <div class="repo-card-meta">
+                    <span class="repo-meta-item"><strong>Author:</strong> Dr. Rohan Mehta</span>
+                    <span class="repo-meta-item"><strong>Institution:</strong> Tilburg University (Netherlands)</span>
+                    <span class="repo-meta-item"><strong>Year:</strong> 2020</span>
+                    <span class="repo-meta-item"><strong>Degree:</strong> Ph.D.</span>
+                  </div>
+                  <p class="repo-card-abstract">Comparative analysis of Western academic, neo-Vedantic, and traditional Sanskrit commentarial interpretations of the Yoga Sūtras. The thesis identifies three irreconcilable hermeneutic frameworks and evaluates each against the Sanskrit source text.</p>
+                </div>
+                <div class="repo-card-footer">
+                  <div class="tags" style="margin:0;">
+                    <span class="tag">Philosophy</span><span class="tag">Yoga</span><span class="tag">Patañjali</span>
+                  </div>
+                  <div style="display:flex;gap:var(--space-2);">
+                    <a href="record.html?type=thesis&id=5" class="cite-btn" style="text-decoration:none;">View record →</a>
+                    <button class="cite-btn cite-modal-btn"
+                      data-cite-title="The Yoga Sūtras of Patañjali: A Comparative Study"
+                      data-cite-author="Dr. Rohan Mehta"
+                      data-cite-institution="Tilburg University"
+                      data-cite-year="2020" data-cite-degree="Ph.D.">Cite</button>
+                  </div>
+                </div>
+              </article>
+
+              <article class="repo-card animate-on-scroll"
+                data-year="2019" data-citations="78"
+                data-cite-title="Manuscript Traditions of the Rāmāyaṇa in Kerala: Textual Variants and Regional Adaptations"
+                data-cite-author="Dr. Lakshmi Warrier"
+                data-cite-institution="University of Calicut"
+                data-cite-year="2019" data-cite-degree="Ph.D.">
+                <div class="repo-card-header">
+                  <div>
+                    <h2 class="repo-card-title">Manuscript Traditions of the Rāmāyaṇa in Kerala: Textual Variants and Regional Adaptations</h2>
+                    <span class="repo-card-deva">केरले रामायण-हस्तलेखपरम्परा</span>
+                  </div>
+                  <span class="access-badge badge-download">Download</span>
+                </div>
+                <div class="repo-card-body">
+                  <div class="repo-card-meta">
+                    <span class="repo-meta-item"><strong>Author:</strong> Dr. Lakshmi Warrier</span>
+                    <span class="repo-meta-item"><strong>Institution:</strong> University of Calicut</span>
+                    <span class="repo-meta-item"><strong>Year:</strong> 2019</span>
+                    <span class="repo-meta-item"><strong>Degree:</strong> Ph.D.</span>
+                  </div>
+                  <p class="repo-card-abstract">A critical edition project examining 42 Malayalam-script Rāmāyaṇa manuscripts held in the Kerala State Archives and the Sree Sankaracharya University collection, identifying 180 unique textual variants not recorded in the critical edition.</p>
+                </div>
+                <div class="repo-card-footer">
+                  <div class="tags" style="margin:0;">
+                    <span class="tag">Manuscript Studies</span><span class="tag">Rāmāyaṇa</span><span class="tag">Kerala</span>
+                  </div>
+                  <div style="display:flex;gap:var(--space-2);">
+                    <a href="record.html?type=thesis&id=6" class="cite-btn" style="text-decoration:none;">View record →</a>
+                    <button class="cite-btn cite-modal-btn"
+                      data-cite-title="Manuscript Traditions of the Rāmāyaṇa in Kerala"
+                      data-cite-author="Dr. Lakshmi Warrier"
+                      data-cite-institution="University of Calicut"
+                      data-cite-year="2019" data-cite-degree="Ph.D.">Cite</button>
+                  </div>
+                </div>
+              </article>
+
+            </div><!-- /repo-cards-grid -->
+
+            <!-- Pagination -->
+            <nav class="pagination" id="pagination" aria-label="Repository pages"></nav>
+
+            <div class="text-center" style="margin-top:var(--space-8);">
+              <p class="text-sm text-muted" style="margin-bottom:1rem;">Showing 6 of 240+ theses. <a href="contact.html" style="color:var(--color-primary)">Submit your thesis</a> to be listed.</p>
+            </div>
+
+          </div><!-- /main content -->
+        </div><!-- /repo-listing-layout -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-name">SoXa</span><span class="logo-subtitle">Sanskrit Platform</span></a><p class="footer-brand-desc">Open-access Sanskrit scholarly hub. All content CC BY 4.0.</p></div>
+          <div><h3 class="footer-col-title">Repositories</h3><ul class="footer-links"><li><a href="thesis.html">Thesis Repository</a></li><li><a href="epigraphical.html">Epigraphical Archive</a></li><li><a href="literary-history.html">Literary History</a></li></ul></div>
+          <div><h3 class="footer-col-title">Platform</h3><ul class="footer-links"><li><a href="developments.html">Developments</a></li><li><a href="cfp.html">CFP Tracker</a></li><li><a href="journal.html">Journal</a></li><li><a href="about.html">About</a></li></ul></div>
+          <div><h3 class="footer-col-title">Contact</h3><p class="footer-contact-item"><a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a></p></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. CC BY 4.0.</p><ul class="footer-legal"><li><a href="#">Privacy</a></li><li><a href="#">Accessibility</a></li></ul></div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul class="bottom-nav-items">
+      <li><a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏛️</span>Home</a></li>
+      <li><a href="repositories.html" class="bottom-nav-item active"><span class="nav-icon">📚</span>Repos</a></li>
+      <li><a href="developments.html" class="bottom-nav-item"><span class="nav-icon">📰</span>Devs</a></li>
+      <li><a href="about.html" class="bottom-nav-item"><span class="nav-icon">ℹ️</span>About</a></li>
+      <li><a href="contact.html" class="bottom-nav-item"><span class="nav-icon">✉️</span>Contact</a></li>
+    </ul>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>

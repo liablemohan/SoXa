@@ -1,246 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoXa Cultural Institute - Exploring Global Cultural Traditions</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoXa — Sanskrit Higher Education Platform | Open-Access Scholarly Hub</title>
+  <meta name="description" content="SoXa is an open-access Sanskrit scholarly hub combining the Thesis Repository, Epigraphical Archive, and Literary History database for Sanskrit scholars and students worldwide.">
+  <meta name="keywords" content="Sanskrit, scholarship, thesis repository, epigraphy, literary history, Devanagari, IAST, open access">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Webfonts: Cormorant Garamond + Source Serif 4 + Inter (preloaded) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                SoXa
-                <span class="logo-subtitle">Cultural Institute</span>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="active" role="menuitem" data-trn="home">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger" role="menuitem"
+             aria-haspopup="true" aria-expanded="false" data-trn="repositories">
+            Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem" data-trn="title_thesis">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem" data-trn="title_epigraphical">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem" data-trn="title_literary">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" role="menuitem" data-trn="developments">Developments</a></li>
+        <li role="none"><a href="community.html" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right-side controls -->
+      <div class="nav-controls">
+        <!-- Search -->
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off"
+                 data-trn-placeholder="search_placeholder">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">
+            🔍
+          </button>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+
+        <!-- User Accounts Menu -->
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown">
+            <!-- Dynamic items rendered by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Script toggle -->
+        <button id="script-toggle-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle script: Devanāgarī / IAST / Roman" title="Toggle script">
+          <span class="icon">अ</span>
+          <span class="script-label">देव</span>
+        </button>
+
+        <!-- Reading mode -->
+        <button id="reading-mode-nav-btn" class="nav-icon-btn"
+                aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===== ZONE 1: HERO CAROUSEL ===== -->
+    <section class="hero-carousel" aria-label="Featured content">
+      <div class="carousel-container">
+
+        <!-- Slide 1 -->
+        <div class="carousel-slide active" aria-hidden="false">
+          <div class="carousel-image"
+               style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?w=1920&q=80');"
+               role="img" aria-label="Ancient Indian manuscript"></div>
+          <div class="carousel-overlay"></div>
+          <div class="carousel-content container">
+            <span class="carousel-label">Open-Access Sanskrit Scholarship</span>
+            <h1 class="carousel-title">Preserving the Living Tradition of Sanskrit Knowledge</h1>
+            <p class="carousel-subtitle">
+              <span data-deva="ज्ञानं परमं बलम्" data-iast="Jñānaṃ paramaṃ balam" data-roman="Knowledge is supreme power" class="devanagari">ज्ञानं परमं बलम्</span>
+            </p>
+            <div class="carousel-cta">
+              <a href="repositories.html" class="btn btn-primary">Explore Repositories</a>
+              <a href="about.html" class="btn btn-outline">Our Mission</a>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="research.html">R & D</a></li>
-                <li><a href="contact.html">Contact</a></li>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide" aria-hidden="true">
+          <div class="carousel-image"
+               style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1920&q=80');"
+               role="img" aria-label="Sanskrit inscriptions"></div>
+          <div class="carousel-overlay"></div>
+          <div class="carousel-content container">
+            <span class="carousel-label">Epigraphical Archive</span>
+            <h1 class="carousel-title">Thousands of Inscriptions. One Open Database.</h1>
+            <p class="carousel-subtitle">Browse ancient inscriptions from across the Indian subcontinent, freely available with diplomatic transcriptions and translations.</p>
+            <div class="carousel-cta">
+              <a href="epigraphical.html" class="btn btn-primary">Browse Inscriptions</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide" aria-hidden="true">
+          <div class="carousel-image"
+               style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80');"
+               role="img" aria-label="Library of classical texts"></div>
+          <div class="carousel-overlay"></div>
+          <div class="carousel-content container">
+            <span class="carousel-label">Thesis Repository</span>
+            <h1 class="carousel-title">Open Access to Sanskrit Scholarship from Every University</h1>
+            <p class="carousel-subtitle">Discover doctoral and postgraduate theses in Sanskrit studies — with full citations, abstracts, and EPUB downloads.</p>
+            <div class="carousel-cta">
+              <a href="thesis.html" class="btn btn-primary">Search Theses</a>
+              <a href="contact.html" class="btn btn-outline">Submit Your Work</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-slide" aria-hidden="true">
+          <div class="carousel-image"
+               style="background-image: url('https://images.unsplash.com/photo-1526243741027-444d633d7365?w=1920&q=80');"
+               role="img" aria-label="Scholars in discussion"></div>
+          <div class="carousel-overlay"></div>
+          <div class="carousel-content container">
+            <span class="carousel-label">Community Platform</span>
+            <h1 class="carousel-title">Contributors Write for Themselves. We Amplify.</h1>
+            <p class="carousel-subtitle">Join a growing community of Sanskrit scholars, students, and cultural enthusiasts co-creating this open repository.</p>
+            <div class="carousel-cta">
+              <a href="contact.html" class="btn btn-accent">Become a Contributor</a>
+              <a href="developments.html" class="btn btn-outline">Latest Developments</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <button class="carousel-arrow carousel-arrow-left" aria-label="Previous slide">‹</button>
+        <button class="carousel-arrow carousel-arrow-right" aria-label="Next slide">›</button>
+
+        <!-- Dots -->
+        <div class="carousel-dots" role="group" aria-label="Carousel navigation">
+          <button class="carousel-dot active" aria-label="Go to slide 1"></button>
+          <button class="carousel-dot" aria-label="Go to slide 2"></button>
+          <button class="carousel-dot" aria-label="Go to slide 3"></button>
+          <button class="carousel-dot" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZONE 2: THREE REPOSITORIES ===== -->
+    <section class="section section-alt" aria-labelledby="repos-heading">
+      <div class="container">
+        <header class="section-header centered animate-on-scroll">
+          <span class="section-eyebrow">Our Three Pillars</span>
+          <h2 class="section-title" id="repos-heading">The Repositories</h2>
+          <p class="section-subtitle">
+            No existing platform combines all three. The Thesis Repository, Epigraphical Archive, and Literary History database are our primary differentiators — unified under one open-access design system.
+          </p>
+        </header>
+
+        <div class="repo-hub-grid">
+          <a href="thesis.html" class="repo-hub-card animate-on-scroll" style="--repo-color:#0F6E56">
+            <div class="repo-hub-icon">📜</div>
+            <h3 class="repo-hub-title">Thesis Repository</h3>
+            <p class="repo-hub-desc">
+              Doctoral and postgraduate theses in Sanskrit studies from universities across India and the world. Open access with full citations and EPUB downloads.
+            </p>
+            <span class="repo-hub-stat">240+ theses · Open Access</span>
+          </a>
+
+          <a href="epigraphical.html" class="repo-hub-card animate-on-scroll" style="--repo-color:#C8742A">
+            <div class="repo-hub-icon">🪨</div>
+            <h3 class="repo-hub-title">Epigraphical Archive</h3>
+            <p class="repo-hub-desc">
+              Ancient inscriptions from across the Indian subcontinent with diplomatic transcriptions, translations, and location data. Freely browsable and downloadable.
+            </p>
+            <span class="repo-hub-stat">1,200+ inscriptions · TEI-XML</span>
+          </a>
+
+          <a href="literary-history.html" class="repo-hub-card animate-on-scroll" style="--repo-color:#2563EB">
+            <div class="repo-hub-icon">📚</div>
+            <h3 class="repo-hub-title">Literary History</h3>
+            <p class="repo-hub-desc">
+              A comprehensive, community-authored history of Sanskrit literature from the Vedic period to the present, with scholar contributions and cross-linked references.
+            </p>
+            <span class="repo-hub-stat">80+ articles · Community-authored</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZONE 3: LATEST ADDITIONS ===== -->
+    <section class="section" aria-labelledby="latest-heading">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <span class="section-eyebrow">Recently Added</span>
+          <h2 class="section-title" id="latest-heading">Latest Additions</h2>
+          <p class="section-subtitle">New theses, inscriptions, and essays added by our scholarly community.</p>
+        </header>
+
+        <div class="articles-grid">
+
+          <article class="article-card animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80"
+                 alt="Ancient Sanskrit manuscript on palm leaf" class="article-card-image"
+                 loading="lazy" width="800" height="450">
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <time class="article-card-date" datetime="2026-05-28">28 May 2026</time>
+                <span class="article-card-category">Thesis</span>
+              </div>
+              <h3 class="article-card-title">Kāvya Aesthetics in Late Classical Sanskrit Poetry: A Re-evaluation of Rasa Theory</h3>
+              <p class="article-card-excerpt">
+                This doctoral thesis examines the evolution of rasa theory across the Nāṭyaśāstra, Dhvanyāloka, and later commentarial traditions, proposing a unified framework for aesthetic experience in classical Sanskrit poetry.
+              </p>
+            </div>
+            <footer class="article-card-footer">
+              <span class="article-card-author">Dr. Meera Krishnamurthy · BHU</span>
+              <a href="thesis.html" class="article-read-link">Read →</a>
+            </footer>
+          </article>
+
+          <article class="article-card animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80"
+                 alt="Stone inscription from South India" class="article-card-image"
+                 loading="lazy" width="800" height="450">
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <time class="article-card-date" datetime="2026-05-15">15 May 2026</time>
+                <span class="article-card-category">Epigraphical</span>
+              </div>
+              <h3 class="article-card-title">The Mahācandra Copper Plate Grant (7th c. CE): Diplomatic Edition and Historical Commentary</h3>
+              <p class="article-card-excerpt">
+                A newly edited diplomatic transcription of the Mahācandra copper plate grant from Karnataka, with paleographic analysis, historical context, and parallel Sanskrit-English text.
+              </p>
+            </div>
+            <footer class="article-card-footer">
+              <span class="article-card-author">Prof. R. Venkataraman · Mysore Univ.</span>
+              <a href="epigraphical.html" class="article-read-link">Read →</a>
+            </footer>
+          </article>
+
+          <article class="article-card animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&q=80"
+                 alt="Scholar studying classical texts" class="article-card-image"
+                 loading="lazy" width="800" height="450">
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <time class="article-card-date" datetime="2026-04-30">30 Apr 2026</time>
+                <span class="article-card-category">Literary History</span>
+              </div>
+              <h3 class="article-card-title">The Campū Genre: Between Prose and Poetry in Medieval Sanskrit Literature</h3>
+              <p class="article-card-excerpt">
+                An in-depth survey of the campū genre from Daṇḍin to Trivikrama Bhaṭṭa, examining how the mixing of prose and verse became a vehicle for courtly self-presentation in medieval India.
+              </p>
+            </div>
+            <footer class="article-card-footer">
+              <span class="article-card-author">Ananya Rao · Jawaharlal Nehru Univ.</span>
+              <a href="literary-history.html" class="article-read-link">Read →</a>
+            </footer>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="repositories.html" class="btn btn-outline-primary">Browse All Additions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZONE 4: UPCOMING EVENTS ===== -->
+    <section class="section section-alt" aria-labelledby="events-heading">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <span class="section-eyebrow">Upcoming</span>
+          <h2 class="section-title" id="events-heading">Events &amp; Workshops</h2>
+          <p class="section-subtitle">Conferences, workshops, and webinars for the Sanskrit scholarly community.</p>
+        </header>
+
+        <div class="events-grid">
+
+          <article class="event-card animate-on-scroll">
+            <div class="event-date-block">
+              <span class="event-date-day">14</span>
+              <span class="event-date-month">Jul</span>
+            </div>
+            <div class="event-card-body">
+              <span class="event-tag">Conference</span>
+              <h3 class="event-title">International Sanskrit Studies Congress 2026</h3>
+              <p class="event-location">📍 Pune, Maharashtra · Hybrid (In-person + Online)</p>
+            </div>
+          </article>
+
+          <article class="event-card animate-on-scroll">
+            <div class="event-date-block">
+              <span class="event-date-day">22</span>
+              <span class="event-date-month">Jul</span>
+            </div>
+            <div class="event-card-body">
+              <span class="event-tag">Workshop</span>
+              <h3 class="event-title">Introduction to TEI-XML for Sanskrit Epigraphers</h3>
+              <p class="event-location">🌐 Online · Zoom · Free Registration</p>
+            </div>
+          </article>
+
+          <article class="event-card animate-on-scroll">
+            <div class="event-date-block">
+              <span class="event-date-day">9</span>
+              <span class="event-date-month">Aug</span>
+            </div>
+            <div class="event-card-body">
+              <span class="event-tag">Webinar</span>
+              <h3 class="event-title">Sanskrit in the Digital Age: Open-Access Publishing for Scholars</h3>
+              <p class="event-location">🌐 Online · Free · Open to all</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="developments.html" class="btn btn-outline-primary">View All Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZONE 5: COMMUNITY SPOTLIGHT ===== -->
+    <section class="section" aria-labelledby="spotlight-heading">
+      <div class="container">
+        <header class="section-header animate-on-scroll">
+          <span class="section-eyebrow">Community</span>
+          <h2 class="section-title" id="spotlight-heading">Contributor Spotlight</h2>
+        </header>
+
+        <div class="spotlight-card animate-on-scroll">
+          <div class="spotlight-avatar-placeholder" aria-hidden="true">VR</div>
+          <div class="spotlight-content">
+            <p class="spotlight-quote">
+              "The Epigraphical Archive gave my research a home. For the first time, my edition of the Rāmacandra inscription is freely accessible to every scholar in the world — without a journal paywall or an institutional login. That's what Sanskrit scholarship has always needed."
+            </p>
+            <div>
+              <p class="spotlight-name">Prof. Vijaya Ramaswamy</p>
+              <p class="spotlight-role">Professor of Ancient Indian History · University of Hyderabad · Contributor since 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="contact.html" class="btn btn-outline-primary">Become a Contributor</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ZONE 6: ABOUT + NEWSLETTER ===== -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="newsletter-content">
+          <p class="newsletter-eyebrow">Stay Connected</p>
+          <h2 class="newsletter-title" id="newsletter-heading">Join the Sanskrit Scholar Network</h2>
+          <p class="newsletter-subtitle">
+            Monthly digest of new repository additions, upcoming events, CFP deadlines, and community news — for scholars, students, and all lovers of Sanskrit.
+          </p>
+          <form class="newsletter-form" novalidate>
+            <label for="newsletter-email" class="sr-only">Your email address</label>
+            <input id="newsletter-email" class="newsletter-input" type="email"
+                   placeholder="your@email.com" autocomplete="email" required>
+            <button type="submit" class="btn btn-accent">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MISSION QUICK VIEW ===== -->
+    <section class="section" aria-labelledby="mission-heading">
+      <div class="container">
+        <header class="section-header centered animate-on-scroll">
+          <span class="section-eyebrow">Our Purpose</span>
+          <h2 class="section-title" id="mission-heading">Why SoXa Exists</h2>
+          <p class="section-subtitle">
+            Every benchmarked Sanskrit platform fails on at least two of four critical criteria: Devanāgarī rendering quality, long-form reading comfort, community contributor visibility, and interactive content discovery. SoXa fills that gap.
+          </p>
+        </header>
+
+        <div class="mission-grid">
+          <div class="mission-card animate-on-scroll">
+            <div class="mission-card-icon">🔬</div>
+            <h3 class="mission-card-title">Research Excellence</h3>
+            <p class="mission-card-body">Supporting scholars with rigorous open-access infrastructure — full citation export, TEI-XML downloads, IAST toggle, and faceted search across all three repositories.</p>
+          </div>
+          <div class="mission-card animate-on-scroll">
+            <div class="mission-card-icon">🛡️</div>
+            <h3 class="mission-card-title">Cultural Preservation</h3>
+            <p class="mission-card-body">Documenting India's epigraphic and literary heritage in stable, open formats that will outlast any individual institution — for future generations of scholars.</p>
+          </div>
+          <div class="mission-card animate-on-scroll">
+            <div class="mission-card-icon">🤝</div>
+            <h3 class="mission-card-title">Community First</h3>
+            <p class="mission-card-body">Contributors write for themselves. The platform is the medium. Every decision — from UI to licensing — is made to serve the contributor, not the institution.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="about.html" class="btn btn-primary">Read Our Full Story</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="logo" aria-label="SoXa home">
+              <span class="logo-name">SoXa</span>
+              <span class="logo-subtitle">Sanskrit Platform</span>
+            </a>
+            <p class="footer-brand-desc">
+              An open-access Sanskrit scholarly hub combining the Thesis Repository, Epigraphical Archive, and Literary History database under one unified platform.
+            </p>
+          </div>
+
+          <!-- Repositories -->
+          <div>
+            <h3 class="footer-col-title">Repositories</h3>
+            <ul class="footer-links">
+              <li><a href="thesis.html">Thesis Repository</a></li>
+              <li><a href="epigraphical.html">Epigraphical Archive</a></li>
+              <li><a href="literary-history.html">Literary History</a></li>
+              <li><a href="repositories.html">All Repositories</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Hero Carousel Section -->
-    <section class="hero-carousel">
-        <div class="carousel-container">
-            <!-- Carousel Slides -->
-            <div class="carousel-slide active">
-                <div class="carousel-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?w=1920&q=80');">
-                </div>
-                <div class="carousel-overlay"></div>
-                <div class="carousel-content container">
-                    <h1 class="carousel-title">Exploring Cultural Traditions Worldwide</h1>
-                    <p class="carousel-subtitle">Research, Education & Digital Archives for Global Cultural Studies</p>
-                </div>
-            </div>
+          <!-- Platform -->
+          <div>
+            <h3 class="footer-col-title">Platform</h3>
+            <ul class="footer-links">
+              <li><a href="developments.html">Developments</a></li>
+              <li><a href="cfp.html">CFP Tracker</a></li>
+              <li><a href="journal.html">Journal</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
 
-            <div class="carousel-slide">
-                <div class="carousel-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1920&q=80');">
-                </div>
-                <div class="carousel-overlay"></div>
-                <div class="carousel-content container">
-                    <h1 class="carousel-title">Preserving Ancient Knowledge</h1>
-                    <p class="carousel-subtitle">Digital archives documenting millennia of human wisdom</p>
-                </div>
-            </div>
-
-            <div class="carousel-slide">
-                <div class="carousel-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1526243741027-444d633d7365?w=1920&q=80');">
-                </div>
-                <div class="carousel-overlay"></div>
-                <div class="carousel-content container">
-                    <h1 class="carousel-title">Connecting Global Scholars</h1>
-                    <p class="carousel-subtitle">Building bridges across cultures through collaborative research</p>
-                </div>
-            </div>
-
-            <div class="carousel-slide">
-                <div class="carousel-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80');">
-                </div>
-                <div class="carousel-overlay"></div>
-                <div class="carousel-content container">
-                    <h1 class="carousel-title">Empowering Cultural Education</h1>
-                    <p class="carousel-subtitle">Innovative programs bringing tradition to modern learners</p>
-                </div>
-            </div>
-
-            <!-- Carousel Navigation Arrows -->
-            <button class="carousel-arrow carousel-arrow-left" aria-label="Previous slide">
-                <span>‹</span>
-            </button>
-            <button class="carousel-arrow carousel-arrow-right" aria-label="Next slide">
-                <span>›</span>
-            </button>
-
-            <!-- Carousel Dots -->
-            <div class="carousel-dots">
-                <button class="carousel-dot active" aria-label="Go to slide 1"></button>
-                <button class="carousel-dot" aria-label="Go to slide 2"></button>
-                <button class="carousel-dot" aria-label="Go to slide 3"></button>
-                <button class="carousel-dot" aria-label="Go to slide 4"></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Latest Updates Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2>LATEST UPDATES</h2>
-            <p class="content-intro">
-                Discover our latest research, educational programs, and digital archives exploring cultural traditions
-                from around the world through innovative documentation and scholarship.
+          <!-- Contact -->
+          <div>
+            <h3 class="footer-col-title">Contact</h3>
+            <p class="footer-contact-item">
+              <a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a>
             </p>
-
-            <div class="card-grid">
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800" alt="Ancient library"
-                        class="article-card-image">
-                    <div class="article-card-content">
-                        <div class="article-card-date">December 15, 2025</div>
-                        <h3>Digital Humanities: Bridging Past and Present</h3>
-                        <p>Exploring how technology transforms cultural research and makes ancient knowledge
-                            accessible to modern scholars.</p>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800"
-                        alt="Ancient artifacts" class="article-card-image">
-                    <div class="article-card-content">
-                        <div class="article-card-date">November 20, 2025</div>
-                        <h3>Comparative Mythology Studies</h3>
-                        <p>New publications examining mythological narratives across ancient civilizations and their
-                            cultural significance.</p>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800" alt="Students"
-                        class="article-card-image">
-                    <div class="article-card-content">
-                        <div class="article-card-date">October 8, 2025</div>
-                        <h3>Global Scholars Exchange Program</h3>
-                        <p>Connecting researchers worldwide to share methodologies and discoveries in cultural
-                            anthropology.</p>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800" alt="Writing"
-                        class="article-card-image">
-                    <div class="article-card-content">
-                        <div class="article-card-date">September 22, 2025</div>
-                        <h3>Linguistic Diversity Archive Launch</h3>
-                        <p>A new digital repository documenting endangered languages and their cultural contexts.</p>
-                    </div>
-                </div>
-
-                <div class="article-card">
-                    <img src="https://images.unsplash.com/photo-1495954484750-af469f2f9be5?w=800" alt="World map"
-                        class="article-card-image">
-                    <div class="article-card-content">
-                        <div class="article-card-date">August 5, 2025</div>
-                        <h3>Interactive Cultural Heritage Map</h3>
-                        <p>Explore cultural sites worldwide through immersive digital mapping and multimedia content.
-                        </p>
-                    </div>
-                </div>
-                </p>
-            </div>
-        </div>
-
-        <div class="article-card">
-            <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=800" alt="Traditional education"
-                class="article-card-image">
-            <div class="article-card-content">
-                <div class="article-card-date">March 25, 2023</div>
-                <h3>Grant made for the support of traditional Vedic education</h3>
-                <p>Scholarship program supporting traditional gurukula education and Sanskrit learning.</p>
-            </div>
-        </div>
-        </div>
-
-        <div class="text-center mt-2">
-            <a href="projects.html" class="btn">See More</a>
-        </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="content-section">
-        <div class="container">
-            <h2>OUR MISSION</h2>
-            <p class="content-intro">
-                We are committed to preserving, promoting, and advancing the study of India's cultural
-                heritage through research, documentation, and education.
+            <p class="footer-contact-item">
+              Sanskrit Higher Education Platform<br>
+              SoXa Cultural Institute
             </p>
+          </div>
 
-            <div class="mission-points">
-                <div class="point">
-                    <h3>Research Excellence</h3>
-                    <p>Supporting scholars, artists, and institutions in their pursuit of excellence
-                        through rigorous research and intellectual resources.</p>
-                </div>
-                <div class="point">
-                    <h3>Cultural Preservation</h3>
-                    <p>Documenting and safeguarding India's intangible cultural traditions and
-                        traditional knowledge systems for future generations.</p>
-                </div>
-                <div class="point">
-                    <h3>Academic Collaboration</h3>
-                    <p>Building networks of scholars and institutions committed to advancing the
-                        understanding of Indian traditions.</p>
-                </div>
-            </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SoXa Cultural Institute</h3>
-                    <p>Advancing global cultural understanding through research, education, and digital preservation.
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="research.html">Research</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>1250 Montgomery Street<br>San Francisco, CA 94133</p>
-                    <p>Email: info@soxainstitute.org</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SoXa Cultural Institute. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. All content licensed under CC BY 4.0 unless otherwise noted.</p>
+        <ul class="footer-legal">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <!-- ===== MOBILE BOTTOM NAV ===== -->
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul class="bottom-nav-items">
+      <li><a href="index.html" class="bottom-nav-item active"><span class="nav-icon">🏛️</span>Home</a></li>
+      <li><a href="repositories.html" class="bottom-nav-item"><span class="nav-icon">📚</span>Repos</a></li>
+      <li><a href="developments.html" class="bottom-nav-item"><span class="nav-icon">📰</span>Devs</a></li>
+      <li><a href="about.html" class="bottom-nav-item"><span class="nav-icon">ℹ️</span>About</a></li>
+      <li><a href="contact.html" class="bottom-nav-item"><span class="nav-icon">✉️</span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
