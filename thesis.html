@@ -35,8 +35,21 @@
           </ul>
         </li>
 
+        <li class="nav-dropdown" role="none">
+          <a href="journal.html" class="nav-dropdown-trigger" role="menuitem"
+             aria-haspopup="true" aria-expanded="false">
+            Publications <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Publications">
+            <li role="none"><a href="journal.html" role="menuitem">📖 Annual Journal</a></li>
+            <li role="none"><a href="newsletter.html" role="menuitem">📬 Newsletter</a></li>
+            <li role="none"><a href="blog.html" role="menuitem">✍️ Blog &amp; Articles</a></li>
+          </ul>
+        </li>
+
         <li role="none"><a href="developments.html" role="menuitem" data-trn="developments">Developments</a></li>
         <li role="none"><a href="community.html" role="menuitem" data-trn="community">Community</a></li>
+        <li role="none"><a href="portal.html" role="menuitem">Join Us</a></li>
         <li role="none"><a href="about.html" role="menuitem" data-trn="about">About</a></li>
         <li role="none"><a href="contact.html" role="menuitem" data-trn="contact">Contact</a></li>
       </ul>
@@ -221,7 +234,6 @@
 
           <!-- Main Content Area -->
           <div>
-            <!-- Sort Bar -->
             <div class="sort-bar">
               <div class="sort-bar-left">
                 <div class="result-count">Showing <strong id="result-count">6</strong> of 240+ theses</div>
@@ -231,7 +243,16 @@
                   <button class="sort-btn" data-sort="cited">Most Cited</button>
                 </div>
               </div>
-              <div class="export-btns">
+              <div class="export-btns" style="display:flex; gap:var(--space-2); align-items:center;">
+                <a href="advanced-search.html" class="export-btn" id="adv-search-link"
+                   style="text-decoration:none;display:flex;align-items:center;gap:4px;"
+                   title="Open the Advanced Search form">
+                  🔎 Advanced Search
+                </a>
+                <div class="view-switcher" role="group" aria-label="View mode" style="margin-right:var(--space-2);">
+                  <button class="view-btn" id="view-grid-btn" title="Grid View" type="button">Grid</button>
+                  <button class="view-btn active" id="view-list-btn" title="List View" type="button">List</button>
+                </div>
                 <button class="export-btn" data-export="csv" aria-label="Export as CSV"><span class="export-icon">⬇</span> CSV</button>
                 <button class="export-btn" data-export="bibtex" aria-label="Export as BibTeX"><span class="export-icon">⬇</span> BibTeX</button>
               </div>
@@ -245,7 +266,7 @@
             </div>
 
             <!-- Cards Grid -->
-            <div class="repo-grid repo-cards-grid" id="thesis-grid" data-filterable data-paginate data-page-size="3">
+            <div class="repo-grid repo-cards-grid list-view" id="thesis-grid" data-filterable data-paginate data-page-size="6">
 
               <article class="repo-card animate-on-scroll"
                 data-year="2024" data-citations="42"
@@ -489,8 +510,9 @@
         <div class="footer-grid">
           <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-name">SoXa</span><span class="logo-subtitle">Sanskrit Platform</span></a><p class="footer-brand-desc">Open-access Sanskrit scholarly hub. All content CC BY 4.0.</p></div>
           <div><h3 class="footer-col-title">Repositories</h3><ul class="footer-links"><li><a href="thesis.html">Thesis Repository</a></li><li><a href="epigraphical.html">Epigraphical Archive</a></li><li><a href="literary-history.html">Literary History</a></li></ul></div>
-          <div><h3 class="footer-col-title">Platform</h3><ul class="footer-links"><li><a href="developments.html">Developments</a></li><li><a href="cfp.html">CFP Tracker</a></li><li><a href="journal.html">Journal</a></li><li><a href="about.html">About</a></li></ul></div>
+          <div><h3 class="footer-col-title">Publications</h3><ul class="footer-links"><li><a href="journal.html">Annual Journal</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="blog.html">Blog &amp; Articles</a></li><li><a href="developments.html">Developments</a></li></ul></div>
           <div><h3 class="footer-col-title">Contact</h3><p class="footer-contact-item"><a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a></p></div>
+          <div><h3 class="footer-col-title">Join Us</h3><ul class="footer-links"><li><a href="portal.html">Volunteer Portal</a></li><li><a href="contribute.html">Submit Work</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         </div>
       </div>
       <div class="footer-bottom"><p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. CC BY 4.0.</p><ul class="footer-legal"><li><a href="#">Privacy</a></li><li><a href="#">Accessibility</a></li></ul></div>
@@ -507,5 +529,6 @@
     </ul>
   </nav>
   <script src="script.js"></script>
+  <script src="phase3.js"></script>
 </body>
 </html>

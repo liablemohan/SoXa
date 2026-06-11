@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Search — Thesis Repository — SoXa Sanskrit Platform</title>
+  <meta name="description" content="Advanced search for the SoXa Thesis Repository. Search by title, researcher, guide, degree, university type, subject, language, script, year, and more.">
+  <meta name="keywords" content="Sanskrit thesis search, advanced search, Sanskrit repository, SoXa">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===== NEW SIMPLIFIED ADVANCED SEARCH PAGE STYLES ===== */
+
+    .advsearch-hero {
+      background: linear-gradient(135deg, #0a0e1a 0%, #0d2137 40%, #0F6E56 100%);
+      padding: var(--space-12) 0 var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+    .advsearch-hero::before {
+      content: '🔍';
+      position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+      font-size: 10rem; opacity: 0.04; pointer-events: none;
+      filter: grayscale(1);
+    }
+    .advsearch-hero-inner { position: relative; }
+    .advsearch-hero-eyebrow {
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); margin-bottom: var(--space-2);
+      display: flex; align-items: center; gap: var(--space-2);
+    }
+    .advsearch-hero-eyebrow a {
+      color: rgba(255,255,255,0.55); text-decoration: none;
+    }
+    .advsearch-hero-eyebrow a:hover { color: rgba(255,255,255,0.85); }
+    .advsearch-hero-eyebrow span { opacity: 0.4; }
+    .advsearch-hero-title {
+      font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 600; color: #fff; line-height: 1.15;
+      margin-bottom: var(--space-3);
+    }
+    .advsearch-hero-sub {
+      font-family: var(--font-ui); font-size: var(--text-base);
+      color: rgba(255,255,255,0.65); max-width: 580px;
+    }
+
+    /* Script Switcher Strip */
+    .script-switcher-strip {
+      background: var(--color-bg-subtle);
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-3) 0;
+      margin-bottom: var(--space-8);
+    }
+    .script-switcher-strip .container {
+      display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap;
+    }
+    .script-switcher-label {
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-text-tertiary);
+    }
+    .script-pills { display: flex; gap: var(--space-2); }
+    .script-pill {
+      font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600;
+      padding: 4px 14px; border-radius: var(--radius-full);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-card); color: var(--color-text-secondary);
+      cursor: pointer; transition: all var(--transition-base);
+    }
+    .script-pill.active, .script-pill:hover {
+      background: var(--color-primary); color: #fff;
+      border-color: var(--color-primary);
+    }
+    .script-info {
+      font-family: var(--font-ui); font-size: var(--text-xs);
+      color: var(--color-text-tertiary); margin-left: auto;
+    }
+
+    /* Centered Search Layout */
+    .advsearch-content {
+      max-width: 1100px;
+      margin: 0 auto var(--space-12);
+      padding: 0 var(--space-4);
+    }
+
+    /* Main Form Card with Accent Border */
+    .search-border-box {
+      border: 2px solid #0F6E56;
+      padding: 30px;
+      background-color: var(--color-bg-card);
+      border-radius: 4px;
+      margin-bottom: var(--space-6);
+      box-shadow: var(--shadow-sm);
+    }
+    @media (max-width: 600px) {
+      .search-border-box {
+        padding: 15px;
+      }
+    }
+
+    /* 3-Column Grid for Fields */
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px 24px;
+    }
+    @media (max-width: 900px) {
+      .search-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .search-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Form Groups */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+    .form-group input, .form-group select {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      color: var(--color-text-primary);
+      background-color: #f6f6f6;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      width: 100%;
+      height: 40px;
+      outline: none;
+      transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: #0F6E56;
+      box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.15);
+    }
+    .form-group input::placeholder {
+      color: #999999;
+    }
+
+    /* Phrase Search Banner Section */
+    .phrase-search-section {
+      margin-bottom: var(--space-6);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .phrase-search-header {
+      background-color: #0F6E56;
+      color: #ffffff;
+      padding: 12px 20px;
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .phrase-search-header .chevron {
+      font-size: 12px;
+      transition: transform var(--transition-base);
+    }
+    .phrase-search-section.collapsed .phrase-search-header .chevron {
+      transform: rotate(-90deg);
+    }
+    .phrase-search-body {
+      border: 1px solid var(--color-border);
+      border-top: none;
+      padding: 20px;
+      background-color: var(--color-bg-card);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    .phrase-search-section.collapsed .phrase-search-body {
+      display: none;
+    }
+
+    .form-textarea {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      color: var(--color-text-primary);
+      background-color: #f6f6f6;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 10px 12px;
+      width: 100%;
+      min-height: 80px;
+      resize: vertical;
+      outline: none;
+    }
+    .form-textarea:focus {
+      border-color: #0F6E56;
+    }
+
+    /* Items per page UI */
+    .items-per-page-container {
+      margin-bottom: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .items-per-page-container label {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+    .items-per-page-input {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      color: var(--color-text-primary);
+      background-color: #f6f6f6;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      width: 150px;
+      height: 40px;
+      padding: 8px 12px;
+      outline: none;
+    }
+    .items-per-page-input:focus {
+      border-color: #0F6E56;
+    }
+
+    /* Action Buttons (Left Aligned) */
+    .actions-bar {
+      display: flex;
+      gap: 12px;
+      margin-top: var(--space-4);
+    }
+    .btn-search {
+      background-color: #0F6E56;
+      color: #ffffff;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .btn-search:hover {
+      background-color: #0a5641;
+      transform: translateY(-1px);
+    }
+    .btn-reset-simple {
+      background-color: #555555;
+      color: #ffffff;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .btn-reset-simple:hover {
+      background-color: #404040;
+      transform: translateY(-1px);
+    }
+
+    /* Devanagari input highlight */
+    .deva-input { font-family: 'Noto Sans Devanagari', 'Mangal', serif; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SoXa home">
+        <span class="logo-name">SoXa</span>
+        <span class="logo-subtitle" data-trn="subtitle">Sanskrit Platform</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="repositories.html" class="nav-dropdown-trigger active" role="menuitem"
+             aria-haspopup="true" aria-expanded="false">
+             Repositories <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Repositories">
+            <li role="none"><a href="thesis.html" role="menuitem">📜 Thesis Repository</a></li>
+            <li role="none"><a href="epigraphical.html" role="menuitem">🪨 Epigraphical Archive</a></li>
+            <li role="none"><a href="literary-history.html" role="menuitem">📚 Literary History</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-dropdown" role="none">
+          <a href="journal.html" class="nav-dropdown-trigger" role="menuitem"
+             aria-haspopup="true" aria-expanded="false">
+             Publications <span class="chevron">▾</span>
+          </a>
+          <ul class="nav-dropdown-menu" role="menu" aria-label="Publications">
+            <li role="none"><a href="journal.html" role="menuitem">📖 Annual Journal</a></li>
+            <li role="none"><a href="newsletter.html" role="menuitem">📬 Newsletter</a></li>
+            <li role="none"><a href="blog.html" role="menuitem">✍️ Blog &amp; Articles</a></li>
+          </ul>
+        </li>
+
+        <li role="none"><a href="developments.html" role="menuitem">Developments</a></li>
+        <li role="none"><a href="community.html" role="menuitem">Community</a></li>
+        <li role="none"><a href="portal.html" role="menuitem">Join Us</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <div class="nav-search" role="search">
+          <label for="nav-search-input" class="sr-only">Search the platform</label>
+          <input id="nav-search-input" class="nav-search-input" type="search"
+                 placeholder="Search texts, authors…" autocomplete="off">
+          <button class="nav-search-btn" aria-label="Open search" title="Search">🔍</button>
+        </div>
+        <div class="nav-dropdown lang-switcher" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+            🌐 <span class="lang-code-label">EN</span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="Language selection">
+            <li role="none"><button class="lang-opt active" data-lang="en" role="menuitem">English</button></li>
+            <li role="none"><button class="lang-opt" data-lang="hi" role="menuitem">हिन्दी</button></li>
+            <li role="none"><button class="lang-opt" data-lang="sa" role="menuitem">संस्कृतम्</button></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown user-menu" role="none">
+          <button class="nav-dropdown-trigger nav-icon-btn user-menu-trigger" aria-haspopup="true" aria-expanded="false" title="User Account">
+            👤 <span class="user-initials"></span>
+          </button>
+          <ul class="nav-dropdown-menu right-aligned" role="menu" aria-label="User menu" id="user-menu-dropdown"></ul>
+        </div>
+        <button id="script-toggle-nav-btn" class="nav-icon-btn" aria-label="Toggle script" title="Toggle script">
+          <span class="icon">अ</span><span class="script-label">देव</span>
+        </button>
+        <button id="reading-mode-nav-btn" class="nav-icon-btn" aria-label="Toggle reading mode" title="Toggle reading mode">
+          <span class="mode-icon">☀️</span>
+        </button>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- Hero Header -->
+    <header class="advsearch-hero" aria-labelledby="advsearch-title">
+      <div class="container">
+        <div class="advsearch-hero-inner">
+          <p class="advsearch-hero-eyebrow">
+            <a href="thesis.html">📜 Thesis Repository</a>
+            <span>›</span>
+            Advanced Search
+          </p>
+          <h1 class="advsearch-hero-title" id="advsearch-title">Advanced Search</h1>
+          <p class="advsearch-hero-sub">
+            Search the complete thesis corpus using the simplified 3-column form below. All fields are optional — combine freely.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Input Script Switcher -->
+    <div class="script-switcher-strip" role="region" aria-label="Input script selection">
+      <div class="container">
+        <span class="script-switcher-label">Input Script:</span>
+        <div class="script-pills" role="group" aria-label="Choose input script">
+          <button class="script-pill active" id="sp-devanagari" data-script="devanagari" aria-pressed="true">
+            देव — Devanāgarī
+          </button>
+          <button class="script-pill" id="sp-iast" data-script="iast" aria-pressed="false">
+            IAST — Romanized
+          </button>
+          <button class="script-pill" id="sp-roman" data-script="roman" aria-pressed="false">
+            Roman (Simple)
+          </button>
+          <button class="script-pill" id="sp-hindi" data-script="hindi" aria-pressed="false">
+            हिन्दी
+          </button>
+        </div>
+        <span class="script-info" id="script-info-label">
+          Typing in: <strong>Devanāgarī</strong>
+        </span>
+      </div>
+    </div>
+
+    <!-- Centered Form Container -->
+    <div class="advsearch-content">
+      <form id="advanced-search-form" novalidate aria-label="Advanced thesis search form">
+
+        <!-- Main border card exactly matching client upload layout -->
+        <div class="search-border-box">
+          <div class="search-grid">
+
+            <!-- Title -->
+            <div class="form-group">
+              <label for="field-title">Title</label>
+              <input type="text" id="field-title" name="title" placeholder="e.g. रस-सिद्धान्तस्य पुनर्मूल्यांकनम्" autocomplete="off" data-field="title">
+            </div>
+
+            <!-- Author / Researcher -->
+            <div class="form-group">
+              <label for="field-researcher">Author / Researcher</label>
+              <input type="text" id="field-researcher" name="researcher" placeholder="e.g. मीरा कृष्णमूर्ति" autocomplete="off" data-field="researcher">
+            </div>
+
+            <!-- Language -->
+            <div class="form-group">
+              <label for="field-language">Language</label>
+              <select id="field-language" name="language" data-field="language">
+                <option value="">Select</option>
+                <option value="संस्कृत">संस्कृत — Sanskrit</option>
+                <option value="हिन्दी">हिन्दी — Hindi</option>
+                <option value="English">English</option>
+                <option value="Marathi">Marathi</option>
+                <option value="Bengali">Bengali</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Kannada">Kannada</option>
+              </select>
+            </div>
+
+            <!-- Script -->
+            <div class="form-group">
+              <label for="field-script">Script</label>
+              <select id="field-script" name="script" data-field="script">
+                <option value="">Select</option>
+                <option value="देवनागरी">देवनागरी — Devanāgarī</option>
+                <option value="Roman">Roman / IAST</option>
+                <option value="Grantha">Grantha</option>
+                <option value="Malayalam">Malayalam</option>
+                <option value="Kannada">Kannada Script</option>
+                <option value="Telugu">Telugu Script</option>
+                <option value="Bengali">Bengali Script</option>
+                <option value="Śāradā">Śāradā</option>
+              </select>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label for="field-subject">Subject</label>
+              <select id="field-subject" name="subject" data-field="subject">
+                <option value="">Select</option>
+                <option value="साहित्य">साहित्य — Sāhitya (Literature)</option>
+                <option value="कोशग्रन्थ">कोशग्रन्थ — Lexicography</option>
+                <option value="व्याकरण">व्याकरण — Grammar &amp; Linguistics</option>
+                <option value="भाषाविज्ञान">भाषाविज्ञान — Linguistics</option>
+                <option value="दर्शन">दर्शन — Philosophy</option>
+                <option value="योगसूत्र">Yoga &amp; Yogasūtra</option>
+                <option value="वेद">वेद — Vedic Studies</option>
+                <option value="धर्मशास्त्र">धर्मशास्त्र — Dharmaśāstra</option>
+                <option value="ज्योतिष">ज्योतिष — Jyotiṣa / Astronomy</option>
+                <option value="आयुर्वेद">आयुर्वेद — Āyurveda</option>
+                <option value="सङ्गणकीय">Computational Sanskrit / NLP</option>
+                <option value="Manuscript Studies">Manuscript Studies</option>
+                <option value="Epigraphy">Epigraphy</option>
+              </select>
+            </div>
+
+            <!-- Degree -->
+            <div class="form-group">
+              <label for="field-degree">Degree</label>
+              <select id="field-degree" name="degree" data-field="degree">
+                <option value="">Select</option>
+                <option value="Bachelor">Bachelor's</option>
+                <option value="Masters">Master's</option>
+                <option value="M. Phil">M.Phil.</option>
+                <option value="Ph. D">Ph.D.</option>
+                <option value="Post Doctorate">Post-Doctorate</option>
+                <option value="Independent">Independent Research</option>
+              </select>
+            </div>
+
+            <!-- Thesis ID -->
+            <div class="form-group">
+              <label for="field-thesis-no">Thesis No. / ID</label>
+              <input type="text" id="field-thesis-no" name="thesis_no" placeholder="e.g. SKT-2006-0001" autocomplete="off" data-field="thesis_no">
+            </div>
+
+            <!-- Guide -->
+            <div class="form-group">
+              <label for="field-guide">Guide</label>
+              <input type="text" id="field-guide" name="guide" placeholder="e.g. डॉ. अंजलि पाठक" autocomplete="off" data-field="guide">
+            </div>
+
+            <!-- Co-Guide -->
+            <div class="form-group">
+              <label for="field-coguide">Co-Guide</label>
+              <input type="text" id="field-coguide" name="coguide" placeholder="e.g. Prof. Ramachandra Rao" autocomplete="off" data-field="coguide">
+            </div>
+
+            <!-- Research Type -->
+            <div class="form-group">
+              <label for="field-research-type">Research Type</label>
+              <select id="field-research-type" name="research_type" data-field="research_type">
+                <option value="">Select</option>
+                <option value="Critical research">Critical Research</option>
+                <option value="Comparative research">Comparative Research</option>
+                <option value="A literary study">Literary Study</option>
+                <option value="Other">Other / Interdisciplinary</option>
+              </select>
+            </div>
+
+            <!-- University Type -->
+            <div class="form-group">
+              <label for="field-uni-type">University Type</label>
+              <select id="field-uni-type" name="uni_type" data-field="uni_type">
+                <option value="">Select</option>
+                <option value="Technical">Technical / Medical</option>
+                <option value="Central University">Central University</option>
+                <option value="Central Traditional University">Central Traditional</option>
+                <option value="State University">State University</option>
+                <option value="State Traditional University">State Traditional</option>
+                <option value="Private University">Private University</option>
+                <option value="Deemed to University">Deemed University</option>
+                <option value="Open University">Open University</option>
+                <option value="Research Institute">Research Institute</option>
+              </select>
+            </div>
+
+            <!-- University Name -->
+            <div class="form-group">
+              <label for="field-university">University / Institute</label>
+              <input type="text" id="field-university" name="university" placeholder="e.g. Banaras Hindu University" autocomplete="off" data-field="university" list="university-list">
+              <datalist id="university-list">
+                <option value="Banaras Hindu University">
+                <option value="Jawaharlal Nehru University">
+                <option value="University of Delhi">
+                <option value="Central Sanskrit University">
+                <option value="National Sanskrit University">
+                <option value="Sampurnanand Sanskrit Vishwavidyalaya">
+                <option value="Savitribai Phule Pune University">
+                <option value="Indian Institute of Technology Bombay">
+                <option value="University of Mumbai">
+                <option value="Amrita Vishwa Vidyapeetham">
+                <option value="Bhandarkar Oriental Research Institute">
+              </datalist>
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+              <label for="field-department">Department</label>
+              <input type="text" id="field-department" name="department" placeholder="e.g. Department of Sanskrit" autocomplete="off" data-field="department">
+            </div>
+
+            <!-- State -->
+            <div class="form-group">
+              <label for="field-state">State</label>
+              <select id="field-state" name="state" data-field="state">
+                <option value="">Select</option>
+                <option>Andhra Pradesh</option>
+                <option>Arunachal Pradesh</option>
+                <option>Assam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Delhi</option>
+                <option>Goa</option>
+                <option>Gujarat</option>
+                <option>Haryana</option>
+                <option>Himachal Pradesh</option>
+                <option>Jharkhand</option>
+                <option>Karnataka</option>
+                <option>Kerala</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+                <option>Manipur</option>
+                <option>Meghalaya</option>
+                <option>Mizoram</option>
+                <option>Nagaland</option>
+                <option>Odisha</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Sikkim</option>
+                <option>Tamil Nadu</option>
+                <option>Telangana</option>
+                <option>Tripura</option>
+                <option>Uttar Pradesh</option>
+                <option>Uttarakhand</option>
+                <option>West Bengal</option>
+              </select>
+            </div>
+
+            <!-- District -->
+            <div class="form-group">
+              <label for="field-district">District</label>
+              <input type="text" id="field-district" name="district" placeholder="e.g. Varanasi, South Delhi" autocomplete="off" data-field="district">
+            </div>
+
+            <!-- Interdisciplinary -->
+            <div class="form-group">
+              <label for="field-interdisciplinary">Interdisciplinary Domains</label>
+              <input type="text" id="field-interdisciplinary" name="interdisciplinary" placeholder="e.g. Computational Linguistics" autocomplete="off" data-field="interdisciplinary">
+            </div>
+
+            <!-- Sub-Subject -->
+            <div class="form-group">
+              <label for="field-subsubject">Sub-Subject</label>
+              <input type="text" id="field-subsubject" name="subsubject" placeholder="e.g. काव्यशास्त्र" autocomplete="off" data-field="subsubject">
+            </div>
+
+            <!-- URL/DOI -->
+            <div class="form-group">
+              <label for="field-url">URL / DOI</label>
+              <input type="url" id="field-url" name="url" placeholder="https://…" autocomplete="off" data-field="url">
+            </div>
+
+            <!-- Year Range - From -->
+            <div class="form-group">
+              <label for="field-year-from">Year From</label>
+              <input type="number" id="field-year-from" name="year_from" placeholder="From e.g. 2000" min="1950" max="2026" autocomplete="off" data-field="year_from">
+            </div>
+
+            <!-- Year Range - To -->
+            <div class="form-group">
+              <label for="field-year-to">Year To</label>
+              <input type="number" id="field-year-to" name="year_to" placeholder="To e.g. 2026" min="1950" max="2026" autocomplete="off" data-field="year_to">
+            </div>
+
+            <!-- Remarks -->
+            <div class="form-group">
+              <label for="field-remarks">Remarks / Notes</label>
+              <input type="text" id="field-remarks" name="remarks" placeholder="e.g. उत्कृष्ट शोध" autocomplete="off" data-field="remarks">
+            </div>
+
+            <!-- Keywords -->
+            <div class="form-group">
+              <label for="field-keywords">Keywords</label>
+              <input type="text" id="field-keywords" name="keywords" placeholder="Keywords, comma separated" autocomplete="off" data-field="keywords">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Collapsible Phrase Search Panel -->
+        <section class="phrase-search-section collapsed" id="phrase-search-sec">
+          <div class="phrase-search-header" id="phrase-search-hdr" role="button" tabindex="0" aria-expanded="false" aria-controls="phrase-search-body">
+            <span>Phrase Search</span>
+            <span class="chevron">▼</span>
+          </div>
+          <div class="phrase-search-body" id="phrase-search-body">
+            <div class="form-group">
+              <label for="field-abstract">Abstract contains</label>
+              <textarea class="form-textarea" id="field-abstract" name="abstract" placeholder="Search within abstract text — e.g. rasa theory, computational sandhi, epigraphic edition" data-field="abstract"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Items per page input -->
+        <div class="items-per-page-container">
+          <label for="field-items-per-page">Items per page</label>
+          <input type="number" class="items-per-page-input" id="field-items-per-page" name="items_per_page" value="5" min="1" max="100">
+        </div>
+
+        <!-- Submit and Reset Actions -->
+        <div class="actions-bar">
+          <button type="submit" class="btn-search">Search</button>
+          <button type="button" class="btn-reset-simple" id="btn-reset-simple">Reset</button>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo" aria-label="SoXa home">
+              <span class="logo-name">SoXa</span>
+              <span class="logo-subtitle">Sanskrit Platform</span>
+            </a>
+            <p class="footer-brand-desc">Open-access Sanskrit scholarly hub. All content CC BY 4.0.</p>
+          </div>
+          <div><h3 class="footer-col-title">Repositories</h3><ul class="footer-links"><li><a href="thesis.html">Thesis Repository</a></li><li><a href="epigraphical.html">Epigraphical Archive</a></li><li><a href="literary-history.html">Literary History</a></li></ul></div>
+          <div><h3 class="footer-col-title">Publications</h3><ul class="footer-links"><li><a href="journal.html">Annual Journal</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="blog.html">Blog &amp; Articles</a></li><li><a href="developments.html">Developments</a></li></ul></div>
+          <div><h3 class="footer-col-title">Contact</h3><p class="footer-contact-item"><a href="mailto:info@soxainstitute.org">info@soxainstitute.org</a></p></div>
+          <div><h3 class="footer-col-title">Join Us</h3><ul class="footer-links"><li><a href="portal.html">Volunteer Portal</a></li><li><a href="contribute.html">Submit Work</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 SoXa Sanskrit Platform. Open Access. CC BY 4.0.</p>
+        <ul class="footer-legal">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <ul class="bottom-nav-items">
+      <li><a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏛️</span>Home</a></li>
+      <li><a href="repositories.html" class="bottom-nav-item active"><span class="nav-icon">📚</span>Repos</a></li>
+      <li><a href="thesis.html" class="bottom-nav-item"><span class="nav-icon">🔍</span>Thesis</a></li>
+      <li><a href="developments.html" class="bottom-nav-item"><span class="nav-icon">📰</span>News</a></li>
+      <li><a href="contact.html" class="bottom-nav-item"><span class="nav-icon">✉️</span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    /* ===== ADVANCED SEARCH JS ===== */
+
+    // ---- Script switcher ----
+    const scriptLabels = {
+      devanagari: 'Devanāgarī',
+      iast: 'IAST (Romanized)',
+      roman: 'Roman (Simple)',
+      hindi: 'Hindi (हिन्दी)',
+    };
+
+    document.querySelectorAll('.script-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.script-pill').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        const script = btn.dataset.script;
+        document.getElementById('script-info-label').innerHTML =
+          `Typing in: <strong>${scriptLabels[script]}</strong>`;
+      });
+    });
+
+    // ---- Collapsible Phrase Search ----
+    const phraseSearchSec = document.getElementById('phrase-search-sec');
+    const phraseSearchHeader = document.getElementById('phrase-search-hdr');
+    
+    const togglePhraseSearch = () => {
+      const collapsed = phraseSearchSec.classList.toggle('collapsed');
+      phraseSearchHeader.setAttribute('aria-expanded', String(!collapsed));
+    };
+
+    phraseSearchHeader.addEventListener('click', togglePhraseSearch);
+    phraseSearchHeader.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        togglePhraseSearch();
+      }
+    });
+
+    // ---- Reset Form ----
+    document.getElementById('btn-reset-simple').addEventListener('click', () => {
+      document.getElementById('advanced-search-form').reset();
+    });
+
+    // ---- Form submit ----
+    document.getElementById('advanced-search-form').addEventListener('submit', e => {
+      e.preventDefault();
+      
+      const params = new URLSearchParams();
+      const form = e.target;
+
+      // Collect inputs
+      form.querySelectorAll('input[data-field]').forEach(input => {
+        if (input.value.trim()) {
+          params.set(input.dataset.field, input.value.trim());
+        }
+      });
+
+      // Collect selects
+      form.querySelectorAll('select[data-field]').forEach(sel => {
+        if (sel.value) {
+          params.set(sel.dataset.field, sel.value);
+        }
+      });
+
+      // Collect abstract textarea from Phrase Search
+      const abstract = document.getElementById('field-abstract');
+      if (abstract && abstract.value.trim()) {
+        params.set('abstract', abstract.value.trim());
+      }
+
+      // Collect items per page
+      const itemsPerPage = document.getElementById('field-items-per-page');
+      if (itemsPerPage && itemsPerPage.value) {
+        params.set('limit', itemsPerPage.value);
+      }
+
+      window.location.href = `thesis.html?${params.toString()}`;
+    });
+  </script>
+
+  <script src="script.js"></script>
+  <script src="phase3.js"></script>
+</body>
+
+</html>

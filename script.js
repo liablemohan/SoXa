@@ -528,6 +528,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFontSizeControls();
   initMapPage();
   initFootnotes();
+
+  /* ── Phase 3 ── */
+  initPhase3();
 });
 
 /* ============================================================

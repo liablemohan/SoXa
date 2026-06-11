@@ -1,0 +1,324 @@
+# SoXa Development Roadmap (5 Stages)
+
+## Stage 1: Repository MVP (8–12 Weeks)
+
+### Objective
+
+Transform the current static website into a functional Sanskrit research repository.
+
+### Features
+
+#### Backend
+
+* Django + Django REST Framework setup
+* PostgreSQL database integration
+* Dockerized development environment
+
+#### Repository Modules
+
+* Thesis Repository
+* Epigraphical Repository
+* Literary History Repository
+
+#### Database
+
+Implement schemas for:
+
+* Users
+* Theses
+* Epigraphical records
+* Literary records
+
+#### Search
+
+* Basic search
+* Filter by year
+* Filter by institution
+* Filter by subject
+* Pagination
+* Sorting
+
+#### File Handling
+
+* Upload PDFs
+* Download files
+* Access-level badges
+
+#### Admin
+
+Use Django Admin for:
+
+* Add/Edit/Delete records
+* Bulk imports using CSV
+
+### Deliverables
+
+* Live repository website
+* Admin dashboard
+* Searchable records
+* Import pipeline for legacy datasets
+
+---
+
+## Stage 2: CMS and Publications Ecosystem (4–6 Weeks)
+
+### Objective
+
+Allow non-technical editors to manage platform content.
+
+### CMS
+
+Implement Wagtail CMS.
+
+### Editorial Modules
+
+* Home page management
+* News & Updates
+* Conferences
+* Workshops
+* Vacancies
+* Calls for Papers
+* Projects
+* Community announcements
+
+### Publications
+
+* Journal issues
+* Journal articles
+* Newsletter archive
+* Blog system
+
+### Editorial Workflow
+
+Draft
+↓
+Editorial Review
+↓
+Approval
+↓
+Publication
+
+### User Roles
+
+* Super Admin
+* Content Editor
+* Publication Editor
+
+### Deliverables
+
+* Fully manageable content website
+* Editorial workflow
+* Publication infrastructure
+
+---
+
+## Stage 3: Community and Scholarly Network (6–8 Weeks)
+
+### Objective
+
+Build the scholar ecosystem around the repositories.
+
+### Authentication
+
+* Email login
+* Registration
+* Password reset
+
+### Scholar Profiles
+
+* Bio
+* Institution
+* Research interests
+* Publications
+* Expertise areas
+* ORCID field
+
+### Community Features
+
+* Scholar directory
+* Community feed
+* Volunteer portal
+* Campus ambassador applications
+
+### Saved Features
+
+* Saved searches
+* Favorite records
+* Follow scholars
+
+### Roles Introduced
+
+* Scholar Contributor
+* Volunteer Coordinator
+
+### Deliverables
+
+* Active scholarly community
+* Contributor profiles
+* Engagement features
+
+---
+
+## Stage 4: Submission and Review Platform (8 Weeks)
+
+### Objective
+
+Enable crowdsourced growth with quality control.
+
+### Submission System
+
+Users can submit:
+
+* Theses
+* Inscriptions
+* Literary records
+* Blog posts
+* Event announcements
+
+### Workflow
+
+Scholar Submission
+↓
+Automated Validation
+↓
+Reviewer Assignment
+↓
+Review
+↓
+Revision Request
+↓
+Approval
+↓
+Publication
+
+### Reviewer Tools
+
+* Review dashboard
+* Comments
+* Revision requests
+* Approval/rejection actions
+
+### Notifications
+
+* Email notifications
+* In-platform notifications
+
+### Roles Introduced
+
+* Repository Manager
+* Reviewer
+
+### Deliverables
+
+* Community-driven repository expansion
+* Editorial governance system
+
+---
+
+## Stage 5: Advanced Discovery and National Infrastructure (12+ Weeks)
+
+### Objective
+
+Transform SoXa into a digital humanities research infrastructure.
+
+### Advanced Search
+
+Support:
+
+* Boolean operators
+* Exact phrase matching
+* Field-specific queries
+* Faceted search
+* Saved advanced searches
+
+### Search Engine Upgrade
+
+Migrate from PostgreSQL Full Text Search to OpenSearch.
+
+### APIs
+
+Public APIs for:
+
+* Repository metadata
+* Citation retrieval
+* Scholar discovery
+* Research statistics
+
+### Advanced Features
+
+#### Sanskrit Tools
+
+* Transliteration engine
+* Devanāgarī ↔ IAST conversion
+* Script normalization
+
+#### Epigraphical Tools
+
+* GIS-enabled inscription maps
+* Geospatial search
+
+#### Analytics Dashboard
+
+* Download statistics
+* Institutional participation
+* Research trends
+* Citation insights
+
+#### Identifier Infrastructure
+
+* DOI support
+* Handle system integration
+
+#### External Integrations
+
+* ORCID OAuth
+* Crossref metadata
+* OAI-PMH support
+
+### Deliverables
+
+* Research infrastructure platform
+* Interoperable scholarly ecosystem
+* National-scale discoverability
+
+---
+
+# Recommended Timeline
+
+| Stage   | Duration   | Outcome                                    |
+| ------- | ---------- | ------------------------------------------ |
+| Stage 1 | 8–12 weeks | Functional repository                      |
+| Stage 2 | 4–6 weeks  | CMS-driven content platform                |
+| Stage 3 | 6–8 weeks  | Scholar community ecosystem                |
+| Stage 4 | 8 weeks    | Submission and peer-review workflows       |
+| Stage 5 | 12+ weeks  | National digital humanities infrastructure |
+
+Total estimated development time:
+
+### Lean team (1–2 developers)
+
+≈ 10–12 months
+
+### Small dedicated team (3–5 members)
+
+≈ 6–8 months
+
+---
+
+# Priority Principle
+
+The order should always be:
+
+**Content → Discovery → Community → Contribution → Infrastructure**
+
+Do not begin with advanced AI, recommendation systems, or Elasticsearch clusters.
+
+First ensure that:
+
+1. Records exist,
+2. Scholars can find them,
+3. Scholars join the platform,
+4. Scholars contribute,
+5. The ecosystem scales.
+
+This sequence minimizes cost, maximizes early impact, and aligns with SoXa's vision of becoming a community-driven Sanskrit knowledge platform.

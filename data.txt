@@ -1,0 +1,401 @@
+================================================================================
+  SoXa — Sanskrit Platform
+  PROJECT OVERVIEW & BUILD LOG
+  Last updated: 11 June 2026
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 1. ORIGINAL CLIENT REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The client wants to build a website focused on Sanskrit higher education, with
+an emphasis on modern, skill-based approaches rather than traditional methods.
+The goal is visibility and recognition for both Sanskrit scholarship and the
+organization itself.
+
+Core Pillars:
+  - Community-driven contributions: platform is a medium, not a gatekeeper.
+  - Skill-based focus over conventional academic publishing models.
+  - Recognition & visibility for contributors and the organization.
+  - Maximum student engagement across institutions in India and internationally.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 2. WEBSITE STRUCTURE — PAGES REQUIRED vs PAGES BUILT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ SECTION          REQUIRED                             STATUS / FILE
+ ─────────────────────────────────────────────────────────────────────────────
+ Home             Timeline, team message, calendar,    ✅ index.html
+                  news corner, project highlights,
+                  publication highlights, community
+                  spotlight, carousel
+
+ About Us         Org purpose, founding team,          ✅ about.html
+                  vision, why started
+
+ Projects         3 major repositories + short-format  ✅ projects.html
+                  1–2 hour scope sprint projects
+
+ Repositories     Hub for all three repositories       ✅ repositories.html
+
+ Thesis Repo      Browse/filter thesis collection      ✅ thesis.html
+                  with advanced search                 ✅ advanced-search.html
+
+ Epigraphical     Epigraphical archive with map        ✅ epigraphical.html
+                  Inscription map / geo-visualization  ✅ inscription-map.html
+
+ Literary History Literary/historical corpus repo      ✅ literary-history.html
+
+ News & Updates   Divided into 5 sections:             ✅ developments.html
+                    Vacancies                          ✅ (tab in developments)
+                    Workshops                          ✅ (tab in developments)
+                    Seminars                           ✅ (tab in developments)
+                    Journals / CFP                     ✅ (tab in developments)
+                    Conferences                        ✅ (tab in developments)
+                  Calls for Papers tracker             ✅ cfp.html
+
+ Publications     Annual Journal                       ✅ journal.html
+                  Newsletter (monthly/quarterly)       ✅ newsletter.html
+                  Blog/open-submission articles        ✅ blog.html
+
+ Community        Scholar hub, community feed          ✅ community.html (redesigned)
+                  Core Team, Review Panels, Scholars   ✅ community.html
+                  Scholar profile pages                ✅ scholar.html
+
+ Join Us          Volunteer portal redesigned with     ✅ portal.html (redesigned)
+                  4 role cards, application form,
+                  onboarding timeline, testimonials,
+                  partner institutions strip, FAQ
+                  Submit your work form                ✅ contribute.html
+                  Campus ambassador program            ✅ (section in portal)
+
+ Contact          Contact form + details               ✅ contact.html
+
+ Research         Research explorer / discovery tool   ✅ research.html
+
+ Record View      Full thesis/record detail page       ✅ record.html
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 3. COMPLETE FILE INVENTORY (27 files)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ HTML PAGES (20 files)
+ ────────────────────────────────━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━─────────────
+ about.html              About the organization, founding team, vision
+ advanced-search.html    Advanced search form for Thesis Repository — simplified
+                         flat 3-column grid layout with 22 fields; SoXa-green
+                         accent (#0F6E56); collapsible Phrase Search panel;
+                         Items per page selector; Search/Reset action buttons
+ blog.html               Open-submission Sanskrit blog & articles
+ cfp.html                Calls for Papers tracker
+ community.html          Scholar community hub, feed
+ contact.html            Contact form and details
+ contribute.html         Submit work / contribution form
+ developments.html       News & Updates (7 tabs: Journals, Conferences,
+                           Seminars, Workshops, CFP, Vacancies, Community)
+ epigraphical.html       Epigraphical Archive repository
+ index.html              Home page (carousel, stats, highlights, calendar)
+ inscription-map.html    Interactive epigraphical map
+ journal.html            Annual Journal publication hub
+ literary-history.html   Literary History Repository
+ newsletter.html         Newsletter archive + subscription
+ portal.html             Volunteer portal / join us
+ projects.html           Projects hub (major + short-format sprint projects)
+ record.html             Full record view (thesis/inscription detail)
+ repositories.html       Repositories hub/landing
+ research.html           Research discovery and explorer
+ scholar.html            Scholar profile page
+ thesis.html             Thesis Repository with filters and sort
+
+ JAVASCRIPT (2 files)
+ ────────────────────────────────━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━─────────────
+ script.js               Core JS: navigation, language switcher, search,
+                           user accounts, dark mode, script toggle, filters,
+                           pagination, citation modal, save-search, export
+ phase3.js               Extended JS: scroll animations, advanced UI,
+                           carousel, tag input, data loading, accessibility
+
+ CSS (1 file)
+ ────────────────────────────────━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━─────────────
+ style.css               Unified design system: CSS custom properties,
+                           typography, layout (navbar, sidebar, footer,
+                           cards, filters, tabs, badges, modals),
+                           dark/light themes, responsive breakpoints
+
+ DATA (1 file)
+ ────────────────────────────────━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━─────────────
+ demo_data_repo - Sheet1.csv   Sample thesis repository data (CSV format)
+                                Fields: Title, Researcher, Guide, Co-Guide,
+                                Degree, University, Department, Year, etc.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 4. FEATURES BUILT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ NAVIGATION & STRUCTURE
+   ✅ Unified top navbar with dropdowns: Repositories, Publications
+   ✅ "Join Us" link in every nav (→ portal.html)
+   ✅ Language switcher: English / हिन्दी / संस्कृतम्
+   ✅ Script toggle: Devanāgarī ↔ IAST ↔ Roman
+   ✅ Dark / light mode toggle (☀️ / 🌙)
+   ✅ Mobile hamburger menu + bottom nav bar
+   ✅ User account menu (login/logout/profile)
+   ✅ Consistent footer across all pages with Publications + Join Us columns
+
+ REPOSITORIES (thesis.html, epigraphical.html, literary-history.html)
+   ✅ Filter sidebar: Subject, Degree, Institution, Decade, Access Level
+   ✅ Collapsible filter groups with toggle chevrons
+   ✅ Active filter chips with individual remove buttons
+   ✅ Mobile filter slide-in panel + backdrop
+   ✅ Sort bar: Newest / Oldest / Most Cited
+   ✅ View mode: List / Grid
+   ✅ Export: CSV, BibTeX
+   ✅ Repository cards with title, Devanāgarī transliteration, author,
+       institution, year, degree, access badge, abstract, tags, cite button
+   ✅ Pagination
+   ✅ Zero-state message when no results
+   ✅ Citation modal (MLA, APA, Chicago, BibTeX)
+   ✅ Save search (⭐)
+
+ ADVANCED SEARCH (advanced-search.html)
+   ✅ Input Script switcher strip: Devanāgarī, IAST, Roman, Hindi
+   ✅ 7 collapsible form sections with fill-count badges:
+       1. Identity & Authorship: Title (AND/OR), Researcher Name,
+          Thesis No., Guide, Co-Guide
+       2. Degree & Research Type: Degree (6 checkboxes), Research Type
+          (Critical, Comparative, Literary, Other — 4 checkboxes)
+       3. Institution & Location: University Type (10 radio pills —
+          Technical/IIT/NIT, Central, Central Traditional, State, State
+          Traditional, Private, Deemed, Open, Research Institute),
+          University (with datalist autocomplete), Department, State
+          (all Indian states dropdown), District, Interdisciplinary Domains
+       4. Subject & Discipline: Subject/Stream/Domain (grouped select),
+          Sub-Subject (free text)
+       5. Language & Script: Language (8 checkboxes), Script (8 checkboxes)
+       6. Year & Identifiers: Year From/To (range), URL/DOI
+       7. Content & Full-Text: Keywords (tag-chip input), Abstract
+          (AND/OR/Exact phrase toggle), Remarks
+   ✅ Live Query Summary sidebar — chips for every active field
+   ✅ Section-level fill-count badges (shown only when > 0)
+   ✅ Quick Search presets (Ph.D. 2020+, Kāvya, Sanskrit language, etc.)
+   ✅ Save Search with custom label
+   ✅ Sticky search action bar (Search / Reset / Save Search)
+   ✅ Form submits to thesis.html?params as URL query string
+   ✅ Operator toggle (AND / OR / Exact phrase) on Title & Abstract
+   ✅ 🔎 Advanced Search button linked from thesis.html sort bar
+
+ DEVELOPMENTS (developments.html)
+   ✅ 7 tabs (was 4): Journals, Conferences, Seminars, Workshops,
+       Calls for Papers, Vacancies, Community
+   ✅ Vacancies tab: Faculty positions (JNU), JRFs, volunteer listings
+   ✅ Workshops tab: TEI-XML, Śāradā script, Sanskrit NLP
+   ✅ Seminars tab: National/international seminars, monthly reading circles
+   ✅ Deadline chips (⏰) on vacancy entries
+
+ PUBLICATIONS
+   ✅ journal.html — Annual Journal: theme, TOC, submission info
+   ✅ newsletter.html — Archive grid with frequency filter + subscribe form
+   ✅ blog.html — Category filter (6 topics), featured article,
+       blog cards, "Write for SoXa" CTA, submission guidelines
+
+ PROJECTS (projects.html)
+   ✅ Major projects section (Thesis, Epigraphical, Literary History)
+   ✅ Short-format projects section (1–2 hour sprints):
+       Signboard Documentation, Metre Tagging, Geo-tagging, Writing Sprint
+   ✅ Volunteer CTA → portal.html
+
+ DESIGN SYSTEM (style.css)
+   ✅ CSS custom properties (tokens): colors, spacing, typography, radii,
+       shadows, transitions
+   ✅ Dark mode support via [data-theme="dark"]
+   ✅ Responsive layout (mobile-first, breakpoints at 640px / 900px / 1200px)
+   ✅ Components: navbar, filter-sidebar, repo-card, tab-pane, dev-card,
+       blog-card, footer-grid, bottom-nav, section, page-header, badge,
+       cite-modal, pagination, sort-bar, export-btn, zero-state
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 5. ADVANCED SEARCH — FIELD REFERENCE (Updated June 2026)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ Input scripts supported: Devanāgarī, IAST, Roman, Hindi
+ Layout: Flat 3-column grid (all fields visible without accordion)
+
+ FIELD               INPUT TYPE     OPTIONS / NOTES
+ ─────────────────────────────────────────────────────────────────────────────
+ Title               Text           Free text
+ Author/Researcher   Text           Free text
+ Language            Dropdown       Sanskrit, Hindi, English, Marathi,
+                                    Bengali, Tamil, Telugu, Kannada
+ Script              Dropdown       Devanāgarī, Roman/IAST, Grantha,
+                                    Malayalam, Kannada, Telugu, Bengali, Śāradā
+ Subject             Dropdown       Literary, Grammar, Philosophy, Vedic,
+                                    Dharmaśāstra, Jyotiṣa, Āyurveda,
+                                    Computational, Manuscript, Epigraphy
+ Degree              Dropdown       Bachelor, Master's, M.Phil., Ph.D.,
+                                    Post-Doctorate, Independent Research
+ Thesis No. / ID     Text           SoXa ID or institution-assigned number
+ Guide               Text           Free text
+ Co-Guide            Text           Free text (optional)
+ Research Type       Dropdown       Critical, Comparative, Literary Study, Other
+ University Type     Dropdown       Technical/Medical, Central University,
+                                    Central Traditional, State University,
+                                    State Traditional, Private, Deemed,
+                                    Open University, Research Institute
+ University         Text+datalist   Autocomplete for known institutions
+ Department          Text           Free text
+ State               Dropdown       All 28 Indian states + Delhi
+ District            Text           Free text
+ Interdisciplinary   Text           Free text
+ Sub-Subject         Text           Free text
+ URL / DOI           URL field      Link to full text or DOI
+ Year From           Number         Minimum year (1950–2026)
+ Year To             Number         Maximum year (1950–2026)
+ Remarks             Text           Free text
+ Keywords            Text           Comma-separated keywords
+ [Phrase Search]
+ Abstract contains   Textarea       Full-text search within abstract body
+ Items per page      Number         Default: 5
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 6. RESULT DISPLAY — LIST VIEW FIELDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ Repository result cards display:
+   Title (in English & Devanāgarī where available)
+   Researcher / Author name
+   Guide & Co-Guide
+   University / Institute
+   Department
+   Year of submission
+   Degree level
+   Access badge (Open / Download / Restricted)
+   Abstract (collapsible)
+   Subject tags / keywords
+   Actions: View full record → | Cite | Download (if available)
+
+ Full record view (record.html):
+   All above fields + extended metadata:
+   Thesis Number, Type of Research, University Type, State, District,
+   Language, Script, URL/DOI, Keywords, Remarks, Citation formats
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 7. PENDING / FUTURE WORK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ [ ] Backend / database integration (currently static demo data)
+ [ ] Live CSV/JSON data loading for all three repositories
+ [ ] thesis.html: parse URL params from advanced-search.html and filter
+     results dynamically on page load
+ [ ] User authentication (login, saved searches, profile)
+ [ ] Submission form — online thesis/record submission by scholars
+ [ ] Admin panel — review and approve submitted records
+ [ ] Newsletter subscription — backend (email list integration)
+ [ ] Inscription map — live geo-data from epigraphical database
+ [ ] Transliteration engine — real-time IAST ↔ Devanāgarī ↔ Roman
+ [ ] Full-text search across abstract/keywords across all repos
+ [ ] DOI / handle system for permanent citations
+ [ ] Bulk export (PDF, Excel) from search results
+ [ ] API endpoint for external citation tools
+ [ ] Backend: Django + DRF + PostgreSQL (Stage 1 per backend.txt)
+ [ ] Node.js evaluation: Vite dev toolchain (Option 1) as immediate step;
+     Express thin server (Option 2) for contact/subscribe/search APIs;
+     Next.js (Option 3) deferred to Stage 3+ community features
+ [ ] Decoupled deployment: static frontend on CDN (Cloudflare Pages / S3),
+     Django backend on Cloud Run / Fargate
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 8. TECHNOLOGY STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ Frontend:   HTML5, Vanilla CSS (custom design system), Vanilla JavaScript
+ Fonts:      Cormorant Garamond, Source Serif 4, Inter (Google Fonts)
+ Icons:      Unicode emoji (no external icon library dependency)
+ Maps:       Leaflet.js (inscription-map.html)
+ Hosting:    GitHub repository (liablemohan/SoXa)
+ License:    CC BY 4.0 (all content)
+
+ Backend (planned — backend.txt):
+   Stage 1:  Django + Django REST Framework + PostgreSQL + Docker
+   Stage 2:  Wagtail CMS for editorial workflow
+   Stage 3:  Scholar authentication, ORCID, community profiles
+   Stage 4:  Submission & peer-review workflow
+   Stage 5:  OpenSearch, DOI, OAI-PMH, public APIs
+
+ Node.js Options Assessed (DevOps review, June 2026):
+   Option 1: Vite dev server + build toolchain (zero-risk, recommended now)
+   Option 2: Express.js thin server — contact form, CSV search, subscribe
+   Option 3: Next.js / React — deferred to Stage 3+ (SSR for scholar profiles)
+
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ 9. CHANGE LOG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ ── 11 June 2026 ──────────────────────────────────────────────────────────────
+
+ [REDESIGN] community.html
+   • Full rebuild as "Scholar Community Hub"
+   • Hero banner with Devanāgarī watermark + live stats
+     (24 core members, 3 panels, 140+ scholars, 38 institutions)
+   • Core Team section: featured founder card + 6 team cards with
+     role badges, expertise tags, hover accent bars
+   • Review Panels section: 3 collapsible panel cards
+     (Literature, Epigraphy, Linguistics & Paleography)
+   • Scholars & Professionals directory with search/filter and
+     profile cards (institution, ORCID, expertise tags, follow button)
+   • Community Feed with post cards
+   • Featured Spotlight callout
+   • Community stats strip
+
+ [REDESIGN] portal.html (Join Us)
+   • Full rebuild as structured multi-role application portal
+   • 4 role cards: Reviewer (teal), Ambassador (emerald),
+     Contributor (blue), Data Volunteer (purple) — each with
+     commitment time, perks list, and role-pre-selecting apply button
+   • Multi-section application form: personal details, degree,
+     ORCID, field, role multi-select checkboxes, motivation textarea,
+     smooth success/confirmation state
+   • 4-step onboarding timeline sidebar
+   • 2 volunteer testimonials in sidebar
+   • Partner Institutions strip (13 institutions)
+   • FAQ accordion (5 questions, accessible aria-expanded toggle)
+
+ [ANALYSIS] Node.js integration options assessed
+   • Option 1: Vite dev server + build toolchain (lightest, recommended)
+   • Option 2: Express.js thin server (moderate — contact, subscribe, CSV)
+   • Option 3: Next.js full React migration (heavy — deferred to Stage 3+)
+   • DevOps verdict: Deploy frontend as static CDN (Cloudflare Pages);
+     Django on Cloud Run; Next.js only when scholar profiles need SSR
+
+ [ANALYSIS] React migration assessment
+   • 20 .html pages → 20 React route components
+   • style.css fully portable (CSS variables unchanged)
+   • Recommended path: Vite + React, migrate 1 page at a time from thesis.html
+   • Do NOT migrate before Django backend exists (no API to call)
+
+ [REDESIGN] advanced-search.html
+   • Previous design: 7 collapsible accordion sections with sidebar,
+     live query chips, operator toggles, tag-chip input, sticky action bar
+   • New design: simplified flat 3-column grid layout matching client
+     reference image (similar to manuscript search interfaces)
+   • Layout: single bordered form card, 22 fields in responsive 3-col grid
+   • Inputs: text fields + uniform select dropdowns (no checkboxes/radio pills)
+   • Added: collapsible Phrase Search panel (Abstract textarea)
+   • Added: Items per page input (default 5)
+   • Added: flat Search + Reset buttons
+   • Removed: sidebar, query chips, section badges, quick-search presets,
+     save-search, operator toggles, tag-chip keyword input
+   • Color: initially used orange (#e78c45) from reference image,
+     then corrected to SoXa brand green (#0F6E56) on user request
+   • All URL param field names preserved for thesis.html compatibility
+
+ [FIX] advanced-search.html — color alignment
+   • Replaced all 6 instances of #e78c45 (orange) with #0F6E56 (SoXa green)
+   • Hover state: #d37a34 → #0a5641
+   • Focus shadow: rgba(231,140,69,0.15) → rgba(15,110,86,0.15)
+   • Scope: local <style> block only; no other pages were affected
+   • Brand color confirmed: --color-primary: #0F6E56 (defined in style.css)
+
+================================================================================
+
